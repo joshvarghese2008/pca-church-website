@@ -1,0 +1,278 @@
+.hero {
+  height: 100vh;
+  background-color: #061941e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.herovideobg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  max-width: none;
+  min-height: 100%;
+}
+
+.herocentre {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.herotitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  padding: 0 20;
+
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+.herowelcome {
+  margin: 0;
+
+  font-size: 90;
+  font-weight: 700;
+  color: white;
+}
+
+.herochurchname {
+
+  height: 80;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+
+  min-width: 100vw;
+  max-width: 100vw;
+}
+
+.herochurchinitials {
+  font-family: monotypeCorsiva;
+  font-size: 100;
+  color: white;
+  letter-spacing: 5;
+
+  margin: 0 20 0 0;
+}
+
+.herochurch {
+  margin: 5 0 0 0;
+
+  font-weight: 700;
+  font-size: 90;
+  color: white;
+}
+
+.herotimings {
+  margin: 0 auto;
+  padding: 0 20;
+}
+
+.herotimingssundayservice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 10;
+}
+
+.herotimingssundayschool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herotimingstitle {
+  font-size: 25;
+  font-weight: 700;
+
+  margin-right: 5;
+
+  color: white;
+}
+
+.herotimingstime {
+  font-size: 25;
+  color: white;
+}
+
+@media only screen and (max-width: 550px) {
+  .herochurchname {
+    flex-direction: column;
+  }
+  
+  .herochurchinitials {
+    height: 100px;
+  }
+
+  .herowelcome {
+    font-size: 70px;
+    margin-bottom: 30px;
+  }
+
+  .herochurch {
+    font-size: 70px;
+  }
+
+  .herotimingssundayservice {
+    flex-direction: column;
+  }
+
+  .herotimingssundayschool {
+    flex-direction: column;
+  }
+
+  .herotimingstitle {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .herochurchinitials {
+    height: 90px;
+    font-size: 80;
+  }
+
+  .herowelcome {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .herochurch {
+    font-size: 50px;
+  }
+}
+
+
+.aboutcontainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20;
+
+  width: 100%;
+  max-width: 1140px;
+
+  /* background-color: #a9b2c6; */
+}
+
+.slogantext {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #061941;
+  text-align: center;
+}
+
+.abouttext {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.servicescontainer {
+  position: relative;
+  background-image: url("../public/images/services.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem 20px;
+  color: white;
+}
+
+.servicescontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+.servicescentre {
+  position: relative;
+  z-index: 2;
+  /* background-color: #939393; */
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.servicesdescription {
+  width: 50%;
+}
+
+.servicestitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.servicesubtitle {
+  font-size: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.servicescontent {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: white;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+.service {
+  background-color: #0e3b7a;
+  border-radius: 20px;
+  padding: 1rem;
+  /* margin: 1rem; */
+  flex: 1 1 200px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.servicetitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.servicetime {
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 655px) {
+
+  .servicesubtitle {
+    padding-right: 0;
+  }
+
+  .servicescentre {
+    flex-direction: column;
+  }
+
+  .servicesdescription {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .servicescontent {
+    width: 100%;
+  }
+  
+}
