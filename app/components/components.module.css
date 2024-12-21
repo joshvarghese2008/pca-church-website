@@ -6,7 +6,7 @@
     /* background-color: black; */
     color: white;
 
-    border-radius: 0 0 30 30;
+    border-radius: 0 0 30px 30px;
 
     transition: background-color 0.8s ease-in-out;
 
@@ -43,9 +43,9 @@
     text-decoration: none;
     color: white;
     font-weight: 700;
-    margin: 0 5;
-    padding: 10 20;
-    border-radius: 9999;
+    margin: 0 5px;
+    padding: 10px 20px;
+    border-radius: 9999px;
 
     transition: background-color 0.3s ease-in-out;
 }
@@ -58,7 +58,7 @@
     display: inline-block;
     margin: 0 auto;
     margin-left: 15px;
-    padding: 12 25;
+    padding: 12px 25px;
 
     font-weight: 700;
     font-size: 14px;
@@ -68,7 +68,7 @@
 
     background-color: white;
     color: black;
-    border-radius: 9999;
+    border-radius: 9999px;
 
     transition: all 0.3s ease-in-out;
 }
@@ -82,14 +82,14 @@
     text-decoration: none;
     color: white;
     font-weight: 700;
-    margin: 5 0;
-    padding: 0 10 0 10;
+    margin: 5px 0;
+    padding: 0 10px 0 10px;
 }
 
 .navbarlinkbuttonmenu {
     display: inline-block;
-    margin: 5 auto 5 auto;
-    padding: 12 25;
+    margin: 5px auto 5px auto;
+    padding: 12px 25px;
 
     font-weight: 700;
     font-size: 14px;
@@ -99,22 +99,22 @@
 
     background-color: white;
     color: black;
-    border-radius: 9999;
+    border-radius: 9999px;
 }
 
 
 
 
 .footer {
-    padding: 40 0 30 0;
+    padding: 40px 0 30px 0;
     background-color: #d8d7d7;
-    border-radius: 30 30 0 0;
+    border-radius: 30px 30px 0 0;
 }
 
 .footercentre {
     margin-left: auto;
     margin-right: auto;
-    padding: 20;
+    padding: 20px;
 
     width: 100%;
     max-width: 1140px;
@@ -148,12 +148,12 @@
 }
 
 .footerdivider {
-    margin: 10 0;
+    margin: 10px 0;
     border-top: 1px solid #2c2c2c;
 }
 
 .footercopyright p {
-    margin-top: 15;
+    margin-top: 15px;
     font-size: 14px
 }
 
