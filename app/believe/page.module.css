@@ -51,3 +51,41 @@
       font-size: 50px;
     }
   }
+
+  .whatwebelievecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  
+    padding: 0 20px;
+  
+    max-width: 1140px;
+  }
+
+  .whatwebelievecentre {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    padding: 30px 0;
+  }
+
+  .whatwebelievecontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 1.2rem;
+
+    /* height: 140px; */
+  }
+
+  .believecontent {
+    display: flex;
+  }
+
+  .believetitle {
+    display: inline;
+  }

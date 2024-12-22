@@ -20,11 +20,11 @@ export default function Home() {
           <div className={styles.herotimings}>
             <div className={styles.herotimingssundayservice}>
               <p className={styles.herotimingstitle}>Sunday Service:</p>
-              <p className={styles.herotimingstime}>9AM - 11:30AM</p>
+              <p className={styles.herotimingstime}>9am - 11:30am</p>
             </div>
             <div className={styles.herotimingssundayschool}>
               <p className={styles.herotimingstitle}>Sunday School:</p>
-              <p className={styles.herotimingstime}>11:30AM - 12PM</p>
+              <p className={styles.herotimingstime}>11:30am - 12pm</p>
             </div>
           </div>
         </div>
@@ -58,21 +58,34 @@ export default function Home() {
           <div className={styles.servicescontent}>
             <div className={styles.service}>
               <p className={styles.servicetitle}>Sunday Service</p>
-              <p className={styles.servicetime}>9AM - 11:30AM</p>
+              <p className={styles.servicetime}>9am - 11:30am</p>
             </div>
             <div className={styles.service}>
               <p className={styles.servicetitle}>Sunday School</p>
-              <p className={styles.servicetime}>11:30AM - 12PM</p>
+              <p className={styles.servicetime}>11:30am - 12pm</p>
             </div>
             <div className={styles.service}>
               <p className={styles.servicetitle}>Friday Meeting</p>
-              <p className={styles.servicetime}>7:30PM - 9PM</p>
+              <p className={styles.servicetime}>7:30pm - 9pm</p>
             </div>
             <div className={styles.service}>
               <p className={styles.servicetitle}>Wednesday Prayer Meeting</p>
-              <p className={styles.servicetime}>7:30PM - 9PM</p>
+              <p className={styles.servicetime}>7:30pm - 9pm</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className={styles.sermonVideoContainer}>
+        <h2 className={styles.sermonVideoTitle}>Latest Sermon</h2>
+        <div className={styles.sermonVideoWrapper}>
+          <iframe
+            className={styles.sermonVideo}
+            src="https://www.youtube.com/embed/your-video-id"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </>
