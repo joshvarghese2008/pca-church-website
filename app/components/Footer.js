@@ -4,6 +4,7 @@ import Link from "next/link"
 import styles from "./components.module.css"
 import { FacebookRounded } from "@mui/icons-material"
 import { YouTube } from "@mui/icons-material"
+import { TransitionLink } from "./utils/TransitionLink"
 
 export default function Footer() {
     return (
@@ -12,11 +13,11 @@ export default function Footer() {
                 <div className={styles.footercontent}>
                     <div className={styles.footerlinks}>
                         <div className={styles.footerwebsitelinkscontainer}>
-                            <Link href={'/'} className={styles.footerwebsitelink}>Home</Link>
+                            <TransitionLink href={'/'} className={styles.footerwebsitelink}>Home</TransitionLink>
                             {/* <Link href={'/'} className={styles.footerwebsitelink}>Our Services</Link> */}
-                            <Link href={'/'} className={styles.footerwebsitelink}>What We Believe</Link>
-                            <Link href={'/'} className={styles.footerwebsitelink}>Give</Link>
-                            <Link href={'/'} className={styles.footerwebsitelink}>Plan A Visit</Link>
+                            <TransitionLink href={'/'} className={styles.footerwebsitelink}>What We Believe</TransitionLink>
+                            <TransitionLink href={'/'} className={styles.footerwebsitelink}>Give</TransitionLink>
+                            <TransitionLink href={'/'} className={styles.footerwebsitelink}>Plan A Visit</TransitionLink>
                         </div>
                         <div className={styles.footerexternallinkscontainer}>
                             <Link href={'/'}>
