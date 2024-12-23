@@ -44,7 +44,7 @@ export default function Navbar() {
                             <ul className={styles.navbarlinks}>
                                 {/* <li><Link href={'/'} className={styles.navbarlink}>Our Services</Link></li> */}
                                 <li><TransitionLink href={'/believe'} className={styles.navbarlink}>What We Believe</TransitionLink></li>
-                                <li><TransitionLink href={'/'} className={styles.navbarlink}>Give</TransitionLink></li>
+                                <li><TransitionLink href={'/give'} className={styles.navbarlink}>Give</TransitionLink></li>
                                 <li><TransitionLink href={'/'} className={styles.navbarlinkbutton}>Plan A Visit</TransitionLink></li>
                             </ul>
                         </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-center basis-full bg-church-blue rounded-3xl mx-5 mb-5 pt-4 pb-5">
                     {/* <Link href={'/'} className={styles.navbarlinkmenu}>Our Services</Link> */}
                     <TransitionLink href={'/believe'} className={styles.navbarlinkmenu}>What We Believe</TransitionLink>
-                    <TransitionLink href={'/'} className={styles.navbarlinkmenu}>Give</TransitionLink>
+                    <TransitionLink href={'/give'} className={styles.navbarlinkmenu}>Give</TransitionLink>
                     <TransitionLink href={'/'} className={styles.navbarlinkbuttonmenu}>Plan A Visit</TransitionLink>
                 </div>
             )}
