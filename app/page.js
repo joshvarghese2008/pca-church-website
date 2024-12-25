@@ -35,11 +35,12 @@ export default function Home() {
           our Lord and Saviour Jesus Christ!
         </p>
         <p className={styles.abouttext}>
-          The mission of PCA Church is to guide people to the Lord Jesus Christ,
-          who is the only way to the Father. We want to be a place where
-          individuals and families can come together to know Jesus, to grow in
-          faith, and to deepen their knowledge of His Word. Our heart is to
-          share the hope and love of Christ with all who come through our doors.
+          PCA is a malayalam church located in Ingleburn, NSW. The mission of
+          PCA Church is to guide people to the Lord Jesus Christ, who is the
+          only way to the Father. We want to be a place where individuals and
+          families can come together to know Jesus, to grow in faith, and to
+          deepen their knowledge of His Word. Our heart is to share the hope and
+          love of Christ with all who come through our doors.
         </p>
       </div>
       <div className={styles.servicescontainer}>
@@ -76,16 +77,18 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.sermonVideoContainer}>
-        <h2 className={styles.sermonVideoTitle}>Latest Sermon</h2>
-        <div className={styles.sermonVideoWrapper}>
-          <iframe
-            className={styles.sermonVideo}
-            src="https://www.youtube.com/embed/your-video-id"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div className={styles.sermonVideoCentre}>
+          <h2 className={styles.sermonVideoTitle}>Latest Sermon</h2>
+          <div className={styles.sermonVideoWrapper}>
+            <iframe
+              className={styles.sermonVideo}
+              src="https://www.youtube.com/embed/your-video-id"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </>

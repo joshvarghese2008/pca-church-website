@@ -278,12 +278,16 @@
 }
 
 .sermonVideoContainer {
+  padding: 20px;
+}
+
+.sermonVideoCentre {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
   max-width: 1140px;
 }
 

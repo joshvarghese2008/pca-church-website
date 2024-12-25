@@ -17,7 +17,7 @@ export default function Footer() {
                             {/* <Link href={'/'} className={styles.footerwebsitelink}>Our Services</Link> */}
                             <TransitionLink href={'/believe'} className={styles.footerwebsitelink}>What We Believe</TransitionLink>
                             <TransitionLink href={'/give'} className={styles.footerwebsitelink}>Give</TransitionLink>
-                            <TransitionLink href={'/'} className={styles.footerwebsitelink}>Plan A Visit</TransitionLink>
+                            <TransitionLink href={'/visit'} className={styles.footerwebsitelink}>Plan A Visit</TransitionLink>
                         </div>
                         <div className={styles.footerexternallinkscontainer}>
                             <Link href={'/'}>

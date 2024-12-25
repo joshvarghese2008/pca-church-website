@@ -45,7 +45,7 @@ export default function Navbar() {
                                 {/* <li><Link href={'/'} className={styles.navbarlink}>Our Services</Link></li> */}
                                 <li><TransitionLink href={'/believe'} className={styles.navbarlink}>What We Believe</TransitionLink></li>
                                 <li><TransitionLink href={'/give'} className={styles.navbarlink}>Give</TransitionLink></li>
-                                <li><TransitionLink href={'/'} className={styles.navbarlinkbutton}>Plan A Visit</TransitionLink></li>
+                                <li><TransitionLink href={'/visit'} className={styles.navbarlinkbutton}>Plan A Visit</TransitionLink></li>
                             </ul>
                         </div>
                         <div className="md:hidden">
@@ -60,7 +60,7 @@ export default function Navbar() {
                     {/* <Link href={'/'} className={styles.navbarlinkmenu}>Our Services</Link> */}
                     <TransitionLink href={'/believe'} className={styles.navbarlinkmenu}>What We Believe</TransitionLink>
                     <TransitionLink href={'/give'} className={styles.navbarlinkmenu}>Give</TransitionLink>
-                    <TransitionLink href={'/'} className={styles.navbarlinkbuttonmenu}>Plan A Visit</TransitionLink>
+                    <TransitionLink href={'/visit'} className={styles.navbarlinkbuttonmenu}>Plan A Visit</TransitionLink>
                 </div>
             )}
             </div>
