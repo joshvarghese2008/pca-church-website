@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { number, z } from "zod";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,17 +19,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import { cn } from "@/lib/utils";
-import { Calendar as CalendarIcon } from "lucide-react";
-import { format } from "date-fns";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
-import { DayPicker } from "react-day-picker";
-
 const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
@@ -37,9 +26,6 @@ const formSchema = z.object({
   firstName: z.string().min(2, {
     message: "Please enter a valid first name",
   }),
-  // visitDate: z.date({
-  //   required_error: "Please pick a valid date",
-  // }),
 });
 
 export default function Visit() {
@@ -55,14 +41,12 @@ export default function Visit() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values.email);
     console.log(values.firstName);
-    // console.log(format(values.visitDate, "PPP"));
 
     fetch("../api/emails", {
       method: "POST",
       body: JSON.stringify({
         email: values.email,
         firstName: values.firstName,
-        // visitDate: format(values.visitDate, "PPP"),
       }),
     });
 
@@ -139,21 +123,6 @@ export default function Visit() {
                 <br />
                 <br />
               </p>
-
-              <button
-                style={{ width: "100%" }}
-                onClick={async () => {
-                  await fetch("../api/emails", {
-                    method: "POST",
-                    body: JSON.stringify({
-                      email: "joshvarghese2008@icloud.com",
-                      firstName: "Josh",
-                    }),
-                  });
-                }}
-              >
-                Send Email to Plan a Visit
-              </button>
             </div>
             <hr style={{ marginBottom: "10px" }} />
             <div
@@ -204,53 +173,6 @@ export default function Visit() {
                       </FormItem>
                     )}
                   />
-                  {/* <div style={{ display: "flex", flexDirection: "row" }}>
-                    <FormField
-                      control={form.control}
-                      name="visitDate"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-col w-full">
-                          <FormLabel className="mb-1">Visit Date</FormLabel>
-                          <Popover>
-                            <PopoverTrigger asChild>
-                              <FormControl>
-                                <Button
-                                  variant={"outline"}
-                                  className={cn(
-                                    "pl-3 text-left font-normal",
-                                    !field.value && "text-muted-foreground"
-                                  )}
-                                >
-                                  {field.value ? (
-                                    format(field.value, "PPP")
-                                  ) : (
-                                    <span>Pick a Visit Date</span>
-                                  )}
-                                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                </Button>
-                              </FormControl>
-                            </PopoverTrigger>
-                            <PopoverContent
-                              // className="w-auto p-0"
-                              align="start"
-                            >
-                              <DayPicker
-                                mode="single"
-                                selected={field.value}
-                                onSelect={field.onChange}
-                                hidden={[{ before: new Date() }]}
-                                disabled={{
-                                  before: new Date(),
-                                  dayOfWeek: [1, 2, 3, 4, 5, 6],
-                                }}
-                              />
-                            </PopoverContent>
-                          </Popover>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div> */}
                   <Button className="w-full" type="submit">
                     Submit
                   </Button>
