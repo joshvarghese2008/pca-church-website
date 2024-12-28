@@ -1,3 +1,6 @@
+"use client";
+
+import { Email } from "@mui/icons-material";
 import styles from "./page.module.css";
 
 export default function Visit() {
@@ -71,8 +74,24 @@ export default function Visit() {
                 <br />
                 <br />
               </p>
+
+              <button
+                style={{ width: "100%" }}
+                onClick={async () => {
+                  await fetch("../api/emails", {
+                    method: "POST",
+                    body: JSON.stringify({
+                      email: "joshvarghese2008@icloud.com",
+                      firstName: "Josh",
+                    }),
+                  });
+                }}
+              >
+                Send Email to Plan a Visit
+              </button>
             </div>
           </div>
+          
         </div>
       </div>
     </>
