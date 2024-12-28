@@ -28,6 +28,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
+import { DayPicker } from "react-day-picker";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
@@ -205,7 +206,7 @@ export default function Visit() {
                       </FormItem>
                     )}
                   />
-                  <div style={{ display: "flex", flexDirection: "row" }}>
+                  {/* <div style={{ display: "flex", flexDirection: "row" }}>
                     <FormField
                       control={form.control}
                       name="visitDate"
@@ -232,18 +233,18 @@ export default function Visit() {
                               </FormControl>
                             </PopoverTrigger>
                             <PopoverContent
-                              className="w-auto p-0"
+                              // className="w-auto p-0"
                               align="start"
                             >
-                              <Calendar
+                              <DayPicker
                                 mode="single"
                                 selected={field.value}
                                 onSelect={field.onChange}
+                                hidden={[{ before: new Date() }]}
                                 disabled={{
                                   before: new Date(),
                                   dayOfWeek: [1, 2, 3, 4, 5, 6],
                                 }}
-                                initialFocus
                               />
                             </PopoverContent>
                           </Popover>
@@ -251,7 +252,7 @@ export default function Visit() {
                         </FormItem>
                       )}
                     />
-                  </div>
+                  </div> */}
                   <Button className="w-full" type="submit">
                     Submit
                   </Button>
