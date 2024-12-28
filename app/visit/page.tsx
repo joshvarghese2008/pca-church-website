@@ -29,7 +29,6 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { DayPicker } from "react-day-picker";
-import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -38,13 +37,12 @@ const formSchema = z.object({
   firstName: z.string().min(2, {
     message: "Please enter a valid first name",
   }),
-  visitDate: z.date({
-    required_error: "Please pick a valid date",
-  }),
+  // visitDate: z.date({
+  //   required_error: "Please pick a valid date",
+  // }),
 });
 
 export default function Visit() {
-  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,14 +55,14 @@ export default function Visit() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values.email);
     console.log(values.firstName);
-    console.log(format(values.visitDate, "PPP"));
+    // console.log(format(values.visitDate, "PPP"));
 
     fetch("../api/emails", {
       method: "POST",
       body: JSON.stringify({
         email: values.email,
         firstName: values.firstName,
-        visitDate: format(values.visitDate, "PPP"),
+        // visitDate: format(values.visitDate, "PPP"),
       }),
     });
 
