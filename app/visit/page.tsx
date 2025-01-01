@@ -125,7 +125,7 @@ export default function Visit() {
               </p>
             </div>
             <hr style={{ marginBottom: "10px" }} />
-            <div
+            {/* <div
               style={{
                 maxWidth: "500px",
                 margin: "0 auto",
@@ -179,7 +179,7 @@ export default function Visit() {
                   <FormDescription>Please check your emails for a confirmation once you press "Submit"</FormDescription>
                 </form>
               </Form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
