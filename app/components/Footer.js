@@ -20,17 +20,17 @@ export default function Footer() {
                             <TransitionLink href={'/visit'} className={styles.footerwebsitelink}>Plan A Visit</TransitionLink>
                         </div>
                         <div className={styles.footerexternallinkscontainer}>
-                            <Link href={'/'}>
+                            {/* <Link href={'/'}>
                                 <FacebookRounded />
                             </Link>
                             <Link href={'/'}>
                                 <YouTube />
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <hr className={styles.footerdivider} />
                     <div className={styles.footercopyright}>
-                        <p>&copy; {new Date().getFullYear} PCA Church. All rights reserved</p>
+                        <p>&copy; {new Date().getFullYear()} PCA Church. All rights reserved</p>
                     </div>
                 </div>
             </div>
