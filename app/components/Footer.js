@@ -30,7 +30,7 @@ export default function Footer() {
                     </div>
                     <hr className={styles.footerdivider} />
                     <div className={styles.footercopyright}>
-                        <p>&copy; 2025 PCA Church. All rights reserved</p>
+                        <p>&copy; {new Date().getFullYear} PCA Church. All rights reserved</p>
                     </div>
                 </div>
             </div>
