@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   await resend.emails.send({
     from: "pastor@pcachurchsydney.com",
     to: email,
-    subject: "Confirmation to Plan a Visit for" + firstName,
+    subject: "Confirmation to Plan a Visit for " + firstName,
     react: Visit({ firstName }),
   });
 }
