@@ -45,7 +45,7 @@ export default function Visit({ firstName }: VisitProps) {
         <br />
         PCA Church Sydney
         <br />
-        email@pcachurchsydney.com
+        pastor@pcachurchsydney.com
       </p>
     </Html>
   );
