@@ -46,13 +46,13 @@ export default function Believe() {
                 You can also donate through a bank transfer.<br />Please use the Bank Details below:
               </p>
               <p className={styles.giveMethodText}>
-                <b>Bank Name:</b> PCA Church
+                <b>Bank Name:</b> To be updated...
               </p>
               <p className={styles.giveMethodText}>
-                <b>Account Number:</b> 123456789
+                <b>Account Number:</b> To be updated...
               </p>
               <p className={styles.giveMethodText}>
-                <b>BSB:</b> 12-34-56
+                <b>BSB:</b> To be updated...
               </p>
             </div>
           </div>

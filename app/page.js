@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={styles.sermonVideoContainer}>
+      {/* <div className={styles.sermonVideoContainer}>
         <div className={styles.sermonVideoCentre}>
           <h2 className={styles.sermonVideoTitle}>Latest Sermon</h2>
           <div className={styles.sermonVideoWrapper}>
@@ -90,7 +90,7 @@ export default function Home() {
             ></iframe>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
