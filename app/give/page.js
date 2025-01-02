@@ -39,7 +39,7 @@ export default function Believe() {
                 comes for offerings to be collected.
               </p>
             </div>
-            <div className={styles.giveMethodDivider} />
+            {/* <div className={styles.giveMethodDivider} />
             <div className={styles.giveMethodSection}>
               <p className={styles.giveMethodTitle}>Bank Transfer</p>
               <p className={styles.giveMethodText} style={{ marginBottom: "1rem" }}>
@@ -54,7 +54,7 @@ export default function Believe() {
               <p className={styles.giveMethodText}>
                 <b>BSB:</b> To be updated...
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
