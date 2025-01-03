@@ -1,57 +1,62 @@
-"use client";
 
-import { Email } from "@mui/icons-material";
+import VisitForm from "./form";
 import styles from "./page.module.css";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import { useForm } from "react-hook-form";
+// import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+// import { Button } from "@/components/ui/button";
+// import {
+//   Form,
+//   FormControl,
+//   FormDescription,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from "@/components/ui/form";
+// import { Input } from "@/components/ui/input";
+import { Metadata } from "next";
 
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Please enter a valid email address",
-  }),
-  firstName: z.string().min(2, {
-    message: "Please enter a valid first name",
-  }),
-});
+const metadata: Metadata = {
+  title: "Visit",
+  description: "Visit our church",
+}
+
+// const formSchema = z.object({
+//   email: z.string().email({
+//     message: "Please enter a valid email address",
+//   }),
+//   firstName: z.string().min(2, {
+//     message: "Please enter a valid first name",
+//   }),
+// });
 
 export default function Visit() {
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      firstName: "",
-    },
-  });
+  // const form = useForm<z.infer<typeof formSchema>>({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: {
+  //     email: "",
+  //     firstName: "",
+  //   },
+  // });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values.email);
-    console.log(values.firstName);
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   console.log(values.email);
+  //   console.log(values.firstName);
 
-    fetch("../api/emails", {
-      method: "POST",
-      body: JSON.stringify({
-        email: values.email,
-        firstName: values.firstName,
-      }),
-    });
+  //   fetch("../api/emails", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: values.email,
+  //       firstName: values.firstName,
+  //     }),
+  //   });
 
     
-  }
+  // }
 
   return (
     <>
@@ -125,7 +130,7 @@ export default function Visit() {
               </p>
             </div>
             <hr style={{ marginBottom: "10px" }} />
-            <div
+            {/* <div
               style={{
                 maxWidth: "500px",
                 margin: "0 auto",
@@ -179,7 +184,8 @@ export default function Visit() {
                   <FormDescription>Please check your emails for a confirmation once you press "Submit"</FormDescription>
                 </form>
               </Form>
-            </div>
+            </div> */}
+            <VisitForm />
           </div>
         </div>
       </div>

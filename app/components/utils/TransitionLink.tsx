@@ -12,10 +12,16 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const TransitionLink = ({ children, href, ...props }: TransitionLinkProps) => {
+export const TransitionLink = ({
+  children,
+  href,
+  ...props
+}: TransitionLinkProps) => {
   const router = useRouter();
 
-  const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleTransition = async (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     e.preventDefault();
 
     const body = document.querySelector("body");
@@ -24,10 +30,14 @@ export const TransitionLink = ({ children, href, ...props }: TransitionLinkProps
     router.push(href);
     await sleep(500);
     body?.classList.remove("page-transition");
-  }
+  };
 
   return (
-    <Link onClick={handleTransition} href={href} {...props}>
+    <Link
+      onMouseUp={handleTransition}
+      href={href}
+      {...props}
+    >
       {children}
     </Link>
   );

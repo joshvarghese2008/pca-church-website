@@ -21,8 +21,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PCA Church",
+  title: {
+    default: "PCA Church",
+  },
   description: "The Website of PCA Church, Ingleburn NSW, Australia",
+
 };
 
 const monotypeCorsiva = localFont({

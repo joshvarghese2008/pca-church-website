@@ -1,12 +1,13 @@
+"use client";
+
+import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <>
       <div className={styles.hero}>
-        <video autoPlay muted loop className={styles.herovideobg}>
-          <source src="../videos/herosample.mp4" />
-        </video>
+        <img src="../images/services.png" className={styles.herovideobg} />
         <div className={styles.herocentre}>
           <div />
           <div className={styles.herotitle}>
