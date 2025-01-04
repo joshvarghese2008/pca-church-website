@@ -124,7 +124,7 @@ export default function Visit() {
                 they will receieve a short message <b>{"(in English)"}</b> and
                 will given the opportunity to say their memory verses and sing a
                 song. If your child is shy, they are welcome to sit with you
-                during this time.
+                during this time
                 <br />
                 <br />
               </p>
