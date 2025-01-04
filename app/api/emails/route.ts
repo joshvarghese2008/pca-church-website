@@ -6,9 +6,9 @@ import { format } from "date-fns";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
-  const { email, firstName, visitDate } = await request.json();
+  const { email, firstName } = await request.json();
 
-  if (!email || !firstName || !visitDate) {
+  if (!email || !firstName) {
     return NextResponse.json("Missing email or firstName", { status: 400 });
   }
 
@@ -17,8 +17,8 @@ export async function POST(request: NextRequest) {
       from: "pastor@pcachurchsydney.com",
       to: email,
       bcc: "pastor@pcachurchsydney.com",
-      subject: "Plan A Visit for " + firstName + " on " + format(visitDate, "PPP"),
-      react: Visit({ firstName, visitDate }),
+      subject: "Plan A Visit for " + firstName,
+      react: Visit({ firstName }),
     });
     if (error) {
       return NextResponse.json(

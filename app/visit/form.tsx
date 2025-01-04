@@ -17,25 +17,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 
-import { CalendarIcon } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
-
 const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
   }),
   firstName: z.string().min(2, {
     message: "Please enter a valid first name",
-  }),
-  visitDate: z.date({
-    required_error: "A date for your visit is required"
   }),
 });
 
@@ -54,21 +41,12 @@ export default function VisitForm() {
     console.log(values.email);
     console.log(values.firstName);
 
-    fetch("../api/emails", {
-      method: "POST",
-      body: JSON.stringify({
-        email: values.email,
-        firstName: values.firstName,
-      }),
-    });
-
     try {
       const response = await fetch("../api/emails", {
         method: "POST",
         body: JSON.stringify({
           email: values.email,
           firstName: values.firstName,
-          visitDate: values.visitDate
         }),
       });
       if (response.ok) {
@@ -132,49 +110,6 @@ export default function VisitForm() {
                 <FormControl>
                   <Input placeholder="First Name" {...field} />
                 </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="visitDate"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Visit Date</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-[240px] pl-3 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={{
-                        before: new Date(),
-                        dayOfWeek: [1, 2, 3, 4, 5, 6],
-                        
-                      }}
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
                 <FormMessage />
               </FormItem>
             )}
