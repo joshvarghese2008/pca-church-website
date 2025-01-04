@@ -9,20 +9,20 @@ import {
   Section,
   Text,
 } from "@react-email/components";
+import { format } from "date-fns";
 import * as React from "react";
 
 type VisitProps = {
   firstName: string;
-  // visitDate: string;
+  visitDate: string;
 };
 
-export default function Visit({ firstName }: VisitProps) {
+export default function Visit({ firstName, visitDate }: VisitProps) {
   return (
     <Html>
       <Heading>Welcome, {firstName}!</Heading>
       <p>
-        We are excited to have you join us at PCA Church Sydney. Please email us
-        using the address below with what date you would like to visit us.
+        We are excited to have you join us at PCA Church Sydney on <b>{format(visitDate, "PPP")}</b>.
         <br />
         <br />
         Our Service starts at 9:00am. Please ensure you arrive 15 minutes prior

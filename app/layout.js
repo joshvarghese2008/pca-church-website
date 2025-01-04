@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import localFont from 'next/font/local'
 
+import { Toaster } from "@/components/ui/toaster";
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -39,6 +41,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
         {children}
+        <Toaster />
         <SpeedInsights />
         <Footer />
       </body>

@@ -4,8 +4,6 @@ import { getLocalData } from "./getdata";
 export default async function Believe() {
   const statements = await getLocalData();
 
-  console.log(statements)
-
   return (
     <>
       <div className={styles.hero}>

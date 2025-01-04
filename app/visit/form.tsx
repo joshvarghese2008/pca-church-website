@@ -15,6 +15,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+
+import { CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -23,9 +34,14 @@ const formSchema = z.object({
   firstName: z.string().min(2, {
     message: "Please enter a valid first name",
   }),
+  visitDate: z.date({
+    required_error: "A date for your visit is required"
+  }),
 });
 
 export default function VisitForm() {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,12 +68,22 @@ export default function VisitForm() {
         body: JSON.stringify({
           email: values.email,
           firstName: values.firstName,
+          visitDate: values.visitDate
         }),
       });
       if (response.ok) {
-        alert("Email sent successfully");
+        toast({
+          title: "Success",
+          description:
+            "Your request to visit has been made. Please check your email to continue with further planning.",
+        });
       } else {
-        alert("Failed to send email");
+        toast({
+          title: "Failed",
+          description:
+            "Your visit could not be planned. Please try again or please contact us.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.error("Error sending email:", error);
@@ -110,6 +136,49 @@ export default function VisitForm() {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="visitDate"
+            render={({ field }) => (
+              <FormItem className="flex flex-col">
+                <FormLabel>Visit Date</FormLabel>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <FormControl>
+                      <Button
+                        variant={"outline"}
+                        className={cn(
+                          "w-[240px] pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
+                        )}
+                      >
+                        {field.value ? (
+                          format(field.value, "PPP")
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </Button>
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={{
+                        before: new Date(),
+                        dayOfWeek: [0, 1, 3, 4, 5, 6],
+                        
+                      }}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <Button className="w-full" type="submit">
             Submit
           </Button>
@@ -118,7 +187,11 @@ export default function VisitForm() {
           </FormDescription>
         </form>
       </Form>
-      {/* <button onClick={() => toast({title: "Toasted"})}>Log</button> */}
+      <button
+        onClick={() => toast({ title: "Toasted", variant: "destructive" })}
+      >
+        Log
+      </button>
     </div>
   );
 }
