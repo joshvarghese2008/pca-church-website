@@ -47,9 +47,18 @@ export default function VisitForm() {
         }),
       });
       if (response.ok) {
-        alert("Email sent successfully");
+        toast({
+          title: "Success",
+          description:
+            "Your request to visit has been made. Please check your email to continue with further planning.",
+        });
       } else {
-        alert("Failed to send email");
+        toast({
+          title: "Failed",
+          description:
+            "Your visit could not be planned. Please try again or please contact us.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.error("Error sending email:", error);
