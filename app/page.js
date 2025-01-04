@@ -91,7 +91,7 @@ export default async function Home() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe> */}
-            {/* <p>{notes.at(-1).title}</p> */}
+            <p>{notes.at(-1).title}</p>
           </div>
         </div>
       </div>
