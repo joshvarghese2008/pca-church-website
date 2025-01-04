@@ -168,7 +168,7 @@ export default function VisitForm() {
                       onSelect={field.onChange}
                       disabled={{
                         before: new Date(),
-                        dayOfWeek: [0, 1, 3, 4, 5, 6],
+                        dayOfWeek: [1, 2, 3, 4, 5, 6],
                         
                       }}
                       initialFocus
