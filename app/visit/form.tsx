@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
+import { useToast } from "@/hooks/use-toast";
+
 const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
@@ -26,6 +28,7 @@ const formSchema = z.object({
 });
 
 export default function VisitForm() {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,17 +38,6 @@ export default function VisitForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values.email);
-    console.log(values.firstName);
-
-    fetch("../api/emails", {
-      method: "POST",
-      body: JSON.stringify({
-        email: values.email,
-        firstName: values.firstName,
-      }),
-    });
-
     try {
       const response = await fetch("../api/emails", {
         method: "POST",
