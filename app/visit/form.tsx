@@ -35,16 +35,6 @@ export default function VisitForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values.email);
-    console.log(values.firstName);
-
-    fetch("../api/emails", {
-      method: "POST",
-      body: JSON.stringify({
-        email: values.email,
-        firstName: values.firstName,
-      }),
-    });
 
     try {
       const response = await fetch("../api/emails", {
