@@ -9,6 +9,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Footer from "./components/Footer";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next'
 
 
 const geistSans = Geist({
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar/>
         {children}
+        <Analytics />
         <SpeedInsights />
         <Footer />
       </body>
