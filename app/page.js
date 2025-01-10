@@ -79,22 +79,22 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className={styles.sermonVideoContainer}>
+      {/* <div className={styles.sermonVideoContainer}>
         <div className={styles.sermonVideoCentre}>
           <h2 className={styles.sermonVideoTitle}>Latest Sermon</h2>
           <div className={styles.sermonVideoWrapper}>
-            {/* <iframe
+            <iframe
               className={styles.sermonVideo}
               src="https://www.youtube.com/embed/your-video-id"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe> */}
-            {/* <p>{notes.at(-1).title}</p> */}
+            ></iframe>
+            <p>{notes.at(-1).title}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
