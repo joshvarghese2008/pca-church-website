@@ -26,9 +26,9 @@ export const TransitionLink = ({
 
     const body = document.querySelector("body");
     body?.classList.add("page-transition");
-    await sleep(500);
+    await sleep(10);
     router.push(href);
-    await sleep(500);
+    await sleep(10);
     body?.classList.remove("page-transition");
   };
 
