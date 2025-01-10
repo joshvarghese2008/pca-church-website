@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { supabase } from "./components/utils/supabase";
+// import { supabase } from "./components/utils/supabase";
 
 export default async function Home() {
-  const { data: notes } = await supabase.from("sermons").select();
+  // const { data: notes } = await supabase.from("sermons").select();
 
-  console.log(notes.at(-1).title);
+  // console.log(notes.at(-1).title);
 
   return (
     <>
