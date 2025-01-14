@@ -5,9 +5,9 @@ import Visit from "../../components/emails/Visit";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
-  const { email, firstName } = await request.json();
+  const { email, firstName, visitDate } = await request.json();
 
-  if (!email || !firstName) {
+  if (!email || !firstName || !visitDate) {
     return NextResponse.json("Missing email or firstName", { status: 400 });
   }
 
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       to: email,
       bcc: "pastor@pcachurchsydney.com",
       subject: "Confirmation to Plan a Visit for " + firstName,
-      react: Visit({ firstName }),
+      react: Visit({ firstName, visitDate }),
     });
     if (error) {
       return NextResponse.json(

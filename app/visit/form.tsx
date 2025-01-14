@@ -53,6 +53,7 @@ export default function VisitForm() {
         body: JSON.stringify({
           email: values.email,
           firstName: values.firstName,
+          visitDate: values.visitDate
         }),
       });
       if (response.ok) {
@@ -116,21 +117,21 @@ export default function VisitForm() {
             name="visitDate"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Date of birth</FormLabel>
+                <FormLabel>Visit Date</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
                         variant={"outline"}
                         className={cn(
-                          "w-[240px] pl-3 text-left font-normal",
+                          "w-full pl-3 text-left font-normal",
                           !field.value && "text-muted-foreground"
                         )}
                       >
                         {field.value ? (
                           format(field.value, "PPP")
                         ) : (
-                          <span>Pick a date</span>
+                          <span>Pick a date to Visit</span>
                         )}
                         <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                       </Button>
