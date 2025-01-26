@@ -70,7 +70,7 @@ export default function VisitForm() {
         toast({
           variant: "destructive",
           title: "Failed to send email",
-          description: "Please try again later",
+          description: "Please try again later or contact us directly",
         });
       }
     } catch (error) {
