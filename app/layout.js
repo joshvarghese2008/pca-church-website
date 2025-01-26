@@ -26,9 +26,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "PCA Church",
+    default: "Malayalam - Pentecostal Christian Assembly, Ingleburn",
   },
-  description: "The Website of PCA Church, Ingleburn NSW, Australia",
+  description: "Malaylam Pentecostal Church in Ingleburn, NSW",
 
 };
 
