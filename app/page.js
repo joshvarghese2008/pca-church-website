@@ -38,7 +38,7 @@ export default async function Home() {
           our Lord and Saviour Jesus Christ!
         </p>
         <p className={styles.abouttext}>
-          PCA is a Malayalam church located in Ingleburn, NSW. The mission of
+          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. The mission of
           PCA Church is to guide people to the Lord Jesus Christ, who is the
           only way to the Father. We want to be a place where individuals and
           families can come together to know Jesus, to grow in faith, and to
