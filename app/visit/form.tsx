@@ -25,6 +25,8 @@ import {
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 
+import { useToast } from "@/hooks/use-toast";
+
 const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
@@ -38,6 +40,7 @@ const formSchema = z.object({
 });
 
 export default function VisitForm() {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,13 +56,22 @@ export default function VisitForm() {
         body: JSON.stringify({
           email: values.email,
           firstName: values.firstName,
-          visitDate: values.visitDate
+          visitDate: values.visitDate,
         }),
       });
       if (response.ok) {
-        alert("Email sent successfully");
+        // alert("Email sent successfully");
+        toast({
+          title: "Email sent successfully",
+          description: "Please check your emails for a confirmation",
+        });
       } else {
-        alert("Failed to send email");
+        // alert("Failed to send email");
+        toast({
+          variant: "destructive",
+          title: "Failed to send email",
+          description: "Please try again later or contact us directly",
+        });
       }
     } catch (error) {
       console.error("Error sending email:", error);
