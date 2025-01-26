@@ -37,12 +37,12 @@ export default function Footer() {
               </TransitionLink>
             </div>
             <div className={styles.footerexternallinkscontainer}>
-              {/* <Link href={'/'}>
-                                <FacebookRounded />
-                            </Link>
-                            <Link href={'/'}>
-                                <YouTube />
-                            </Link> */}
+              <Link href={"https://www.facebook.com/pcasydney/"}>
+                <FacebookRounded color="black" />
+              </Link>
+              {/* <Link href={"/"}>
+                <YouTube />
+              </Link> */}
             </div>
           </div>
           <hr className={styles.footerdivider} />
