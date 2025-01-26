@@ -68,6 +68,7 @@ export default function VisitForm() {
       } else {
         // alert("Failed to send email");
         toast({
+          variant: "destructive",
           title: "Failed to send email",
           description: "Please try again later",
         });
