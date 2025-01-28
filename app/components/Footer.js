@@ -16,7 +16,6 @@ export default function Footer() {
               <TransitionLink href={"/"} className={styles.footerwebsitelink}>
                 Home
               </TransitionLink>
-              {/* <Link href={'/'} className={styles.footerwebsitelink}>Our Services</Link> */}
               <TransitionLink
                 href={"/believe"}
                 className={styles.footerwebsitelink}
