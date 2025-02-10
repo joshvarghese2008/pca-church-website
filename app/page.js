@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
       <div className={styles.hero}>
-        <img src="../images/services.png" className={styles.herovideobg} />
+        <Image src="/images/services.png" fill={true} className={styles.herovideobg} />
         <div className={styles.herocentre}>
           <div />
           <div className={styles.herotitle}>
