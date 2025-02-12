@@ -1,6 +1,10 @@
 import styles from "./page.module.css";
 import { getLocalData } from "./getdata";
 
+export const metadata = {
+  title: 'Believe',
+}
+
 export default async function Believe() {
   const statements = await getLocalData();
 
