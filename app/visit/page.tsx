@@ -19,7 +19,7 @@ import styles from "./page.module.css";
 // import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Visit",
   description: "Visit our church",
 }
