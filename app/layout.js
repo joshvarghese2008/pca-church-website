@@ -38,7 +38,7 @@ export const metadata = {
     "Spirit-filled Church",
     "Christian",
     "Christian Church",
-    "Christian Worship"
+    "Christian Worship",
   ],
   robots: {
     index: true,
@@ -48,9 +48,9 @@ export const metadata = {
       follow: true,
     },
     icons: {
-      icon: 'favicon.ico'
-    }
-  }
+      icon: "favicon.ico",
+    },
+  },
 };
 
 const monotypeCorsiva = localFont({
