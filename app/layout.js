@@ -24,7 +24,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Malayalam | PCA Church | Ingleburn",
+  title: {
+    template: '%s | PCA Church',
+    default: 'PCA Church',
+  },
   description:
     "Pentecostal Christian Assembly is a Malayalam church located in Ingleburn, New South Wales",
   keywords: [

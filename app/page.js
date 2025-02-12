@@ -2,6 +2,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 // import { supabase } from "./components/utils/supabase";
 
+export const metadata = {
+  title: 'Home',
+}
+
 export default async function Home() {
   // const { data: notes } = await supabase.from("sermons").select();
 
