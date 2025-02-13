@@ -48,7 +48,13 @@ export const metadata = {
     "Christian Church",
     "Christian Worship",
     "Church near me",
-    "Church"
+    "Church",
+
+    "Christian Assembly Pentecostal Church",
+    "Pentecostal Church Australia",
+    "Pentecostal Church NSW",
+    "Pentecostal Church Ingleburn"
+
   ],
   robots: {
     index: true,
