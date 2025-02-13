@@ -31,17 +31,24 @@ export const metadata = {
   description:
     "Pentecostal Christian Assembly is a Malayalam church located in Ingleburn, New South Wales",
   keywords: [
+    "Malayalam Church near me",
     "Malayalam Church",
     "Malayalam",
+    "Malayalam Worship",
+    "Pentecostal Church near me",
     "Pentecostal Church",
     "Pentecostal",
     "Pentecost",
     "Holy Spirit",
-    "Malayalam Worship",
+    "Holy-Spirit Church near me",
     "Spirit-filled Church",
+    "Spirit-filled Church near me",
+    "Spiritual Church near me",
     "Christian",
     "Christian Church",
     "Christian Worship",
+    "Church near me",
+    "Church"
   ],
   robots: {
     index: true,
