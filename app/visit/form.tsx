@@ -81,9 +81,11 @@ export default function VisitForm() {
   return (
     <div
       style={{
-        maxWidth: "500px",
+        flex: "1",
         margin: "0 auto",
-        marginBottom: "20px",
+        paddingLeft: "20px",
+        paddingRight: "20px",
+        width: "100%"
       }}
     >
       <h1

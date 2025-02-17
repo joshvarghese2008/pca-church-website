@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Script from "next/script";
 // import { supabase } from "./components/utils/supabase";
 
 export default async function Home() {
@@ -10,7 +11,12 @@ export default async function Home() {
   return (
     <>
       <div className={styles.hero}>
-        <Image src="/images/services.png" fill={true} className={styles.herovideobg} />
+        <Image
+          src="/images/services.png"
+          fill={true}
+          alt="Image of PCA Church entrance"
+          className={styles.herovideobg}
+        />
         <div className={styles.herocentre}>
           <div />
           <div className={styles.herotitle}>
@@ -38,10 +44,10 @@ export default async function Home() {
           our Lord and Saviour Jesus Christ!
         </p>
         <p className={styles.abouttext}>
-          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. The mission of
-          PCA Church is to guide people to the Lord Jesus Christ, who is the
-          only way to the Father. We want to be a place where individuals and
-          families can come together to know Jesus, to grow in faith, and to
+          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. The
+          mission of PCA Church is to guide people to the Lord Jesus Christ, who
+          is the only way to the Father. We want to be a place where individuals
+          and families can come together to know Jesus, to grow in faith, and to
           deepen their knowledge of His Word. Our heart is to share the hope and
           love of Christ with all who come through our doors.
         </p>

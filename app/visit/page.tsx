@@ -1,4 +1,3 @@
-
 import VisitForm from "./form";
 import styles from "./page.module.css";
 
@@ -22,7 +21,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Visit",
   description: "Visit our church",
-}
+};
 
 // const formSchema = z.object({
 //   email: z.string().email({
@@ -34,7 +33,6 @@ export const metadata: Metadata = {
 // });
 
 export default function Visit() {
-
   // const form = useForm<z.infer<typeof formSchema>>({
   //   resolver: zodResolver(formSchema),
   //   defaultValues: {
@@ -55,7 +53,6 @@ export default function Visit() {
   //     }),
   //   });
 
-    
   // }
 
   return (
@@ -185,7 +182,17 @@ export default function Visit() {
                 </form>
               </Form>
             </div> */}
-            <VisitForm />
+            <div className={styles.mapvisit} style={{ display: "flex", alignItems: "center" }}>
+              <VisitForm/>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.751892289703!2d150.8543924772378!3d-33.989890225343515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1b4f1f06a6157f5%3A0x9d36ddade8924711!2sPentecostal%20Christian%20Assembly%20-%20Church!5e1!3m2!1sen!2sau!4v1739752385978!5m2!1sen!2sau"
+                height="450px"
+                className={styles.map}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

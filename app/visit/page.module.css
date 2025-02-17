@@ -144,3 +144,26 @@
   font-size: 1.2rem;
   color: #000000;
 }
+
+.mapvisit {
+  display: flex;
+  align-items: center;
+}
+
+.map {
+  flex: 1;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1100px) {
+  .mapvisit {
+    flex-direction: column;
+  }
+
+  .map {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 450px;
+  }
+}
