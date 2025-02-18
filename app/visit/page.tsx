@@ -93,8 +93,8 @@ export default function Visit() {
                   <p>Location</p>
                 </div>
                 <div className={styles.addresscontentrighttext}>
-                  <p>7/79 Williamson Road</p>
-                  <p>Ingleburn, NSW, 2565</p>
+                  <p>7/79 Williamson Rd, Ingleburn NSW 2565</p>
+                  {/* <p>Ingleburn, NSW, 2565</p> */}
                 </div>
               </div>
             </div>
