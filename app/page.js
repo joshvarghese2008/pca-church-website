@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Script from "next/script";
+import Head from "next/head";
 // import { supabase } from "./components/utils/supabase";
 
 export default async function Home() {
@@ -10,6 +11,9 @@ export default async function Home() {
 
   return (
     <>
+    <Head>
+      <link rel="canonical" href="https://pcachurchsydney.com/" key="canonical" />
+    </Head>
       <div className={styles.hero}>
         <Image
           src="/images/services.png"
