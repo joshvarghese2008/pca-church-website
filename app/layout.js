@@ -53,8 +53,23 @@ export const metadata = {
     "Christian Assembly Pentecostal Church",
     "Pentecostal Church Australia",
     "Pentecostal Church NSW",
-    "Pentecostal Church Ingleburn"
+    "Pentecostal Church Ingleburn",
 
+    "Sydney Pentecostal Fellowship",
+    "SPF Church",
+    "Shalom Christian Assembly",
+    "SCA Church",
+    "Biju Meneth",
+    "SPWC",
+    "Padstow Church",
+    "Sydney Pentecostal Worship Centre",
+    
+    "Babu Varghese",
+    "Pentecostal Christian Assembly",
+    "PCA",
+    "PCA Church",
+    "pca church",
+    "pca"
   ],
   robots: {
     index: true,
