@@ -63,6 +63,18 @@ export const metadata = {
     "SPWC",
     "Padstow Church",
     "Sydney Pentecostal Worship Centre",
+
+    "Independant Church",
+    "Church of God",
+    "Church of God near me",
+    "COG",
+    "Assemblies of God",
+    "AG Church",
+    "AG Church near me",
+    "IPC",
+    "IPC near me",
+    "Indian Pentecostal Churches near me",
+    "Indian Pentecostal Church near me",
     
     "Babu Varghese",
     "Pentecostal Christian Assembly",
