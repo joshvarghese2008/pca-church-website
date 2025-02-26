@@ -190,6 +190,7 @@ export default function Visit() {
                 className={styles.map}
                 allowFullScreen
                 loading="lazy"
+                title="Map showing location of PCA Church"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
