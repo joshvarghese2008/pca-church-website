@@ -3,6 +3,8 @@ import { getLocalData } from "./getdata";
 
 export const metadata = {
   title: 'Believe',
+  description:
+    "PCA Church's statement of Belief",
 }
 
 export default async function Believe() {

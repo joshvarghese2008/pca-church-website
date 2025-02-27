@@ -20,7 +20,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Visit",
-  description: "Visit our church",
+  description: "Visit our church. Sunday Service: 9AM - 11:30AM",
 };
 
 // const formSchema = z.object({

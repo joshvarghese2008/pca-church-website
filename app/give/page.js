@@ -1,8 +1,10 @@
 import styles from "./page.module.css";
 
 export const metadata = {
-  title: 'Give',
-}
+  title: "Give",
+  description:
+    "Donation page of PCA Church | Currently we only allow giving in-person",
+};
 
 export default function Believe() {
   return (
