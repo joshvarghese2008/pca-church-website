@@ -18,6 +18,7 @@ export default async function Home() {
         <Image
           src="/images/services.png"
           fill={true}
+          objectFit="cover"
           alt="Image of PCA Church entrance"
           className={styles.herovideobg}
         />
