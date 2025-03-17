@@ -2,9 +2,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Script from "next/script";
 import Head from "next/head";
+
 // import { supabase } from "./components/utils/supabase";
 
-export default async function Home() {
+export default function Home() {
   // const { data: notes } = await supabase.from("sermons").select();
 
   // console.log(notes.at(-1).title);

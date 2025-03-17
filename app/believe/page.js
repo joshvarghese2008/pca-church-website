@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import { getLocalData } from "./getdata";
 
+
 export const metadata = {
   title: 'Believe',
   description:
@@ -9,7 +10,6 @@ export const metadata = {
 
 export default async function Believe() {
   const statements = await getLocalData();
-
   return (
     <>
       <div className={styles.hero}>
@@ -32,6 +32,7 @@ export default async function Believe() {
                 style={{
                   width: "100%",
                 }}
+                className={styles.believeContainer}
                 key={statement.key}
               >
                 <div className={styles.whatwebelievecontent}>
