@@ -89,3 +89,9 @@
   .believetitle {
     display: inline;
   }
+
+  .believeverses {
+    margin-top: 10px;
+    font-style: italic;
+    text-decoration: underline;
+  }
