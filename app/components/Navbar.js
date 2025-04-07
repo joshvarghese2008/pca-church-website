@@ -7,6 +7,7 @@ import { MenuRounded, CloseRounded } from "@mui/icons-material";
 import Image from "next/image";
 import Logo from "../../public/images/churchlogo.png";
 import { motion } from "motion/react";
+import { TransitionLink } from "./utils/TransitionLink";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,37 +49,37 @@ export default function Navbar() {
         <div className={styles.navbarcentre}>
           <div className={styles.navbarcontent}>
             <motion.div {...transition}>
-              <Link href={"/"}>
+              <TransitionLink href={"/"}>
                 <Image
                   src={Logo}
                   alt="Pentecostal Christian Assembly Logo"
                   height={70}
                 />
-              </Link>
+              </TransitionLink>
             </motion.div>
             <div className="hidden md:flex">
               <ul className={styles.navbarlinks}>
                 {/* <li><Link href={'/'} className={styles.navbarlink}>Our Services</Link></li> */}
                 <motion.li {...transition} transition={{ delay: 1 }}>
-                  <Link
+                  <TransitionLink
                     href={"/believe"}
                     className={styles.navbarlink}
                   >
                     What We Believe
-                  </Link>
+                  </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 1.3 }}>
-                  <Link href={"/give"} className={styles.navbarlink}>
+                <motion.li {...transition} transition={{ delay: 1.4 }}>
+                  <TransitionLink href={"/give"} className={styles.navbarlink}>
                     Give
-                  </Link>
+                  </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 1.6 }}>
-                  <Link
+                <motion.li {...transition} transition={{ delay: 1.8 }}>
+                  <TransitionLink
                     href={"/visit"}
                     className={styles.navbarlinkbutton}
                   >
                     Plan A Visit
-                  </Link>
+                  </TransitionLink>
                 </motion.li>
               </ul>
             </div>
@@ -95,8 +96,7 @@ export default function Navbar() {
         </div>
         {isOpen && (
           <div className="flex flex-col items-center basis-full bg-church-blue rounded-3xl mx-5 mb-5 pt-4 pb-5">
-            {/* <Link href={'/'} className={styles.navbarlinkmenu}>Our Services</Link> */}
-            <Link
+            <TransitionLink
               href={"/believe"}
               className={styles.navbarlinkmenu}
               onClick={() => {
@@ -104,8 +104,8 @@ export default function Navbar() {
               }}
             >
               What We Believe
-            </Link>
-            <Link
+            </TransitionLink>
+            <TransitionLink
               href={"/give"}
               className={styles.navbarlinkmenu}
               onClick={() => {
@@ -113,8 +113,8 @@ export default function Navbar() {
               }}
             >
               Give
-            </Link>
-            <Link
+            </TransitionLink>
+            <TransitionLink
               href={"/visit"}
               className={styles.navbarlinkbuttonmenu}
               onClick={() => {
@@ -122,7 +122,7 @@ export default function Navbar() {
               }}
             >
               Plan A Visit
-            </Link>
+            </TransitionLink>
           </div>
         )}
       </div>

@@ -15,7 +15,7 @@ export default function Home() {
 
   const transition = {
     duration: 0.5,
-    delay: 0.3,
+    delay: 1,
   };
 
   return (
@@ -49,7 +49,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
-                delay: transition.delay,
+                delay: transition.delay + 1.2,
                 duration: transition.duration,
               }}
               className={styles.herotimingssundayservice}
@@ -61,7 +61,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.3,
+                delay: transition.delay + 1.5,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -105,7 +105,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.2,
+                delay: transition.delay - 0.2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -118,7 +118,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.4,
+                delay: transition.delay,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -131,7 +131,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.6,
+                delay: transition.delay + 0.2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -144,7 +144,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.8,
+                delay: transition.delay + 0.4,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}

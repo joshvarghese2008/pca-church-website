@@ -4,7 +4,7 @@ import BelieveCard from "./believeCard";
 
 export const metadata = {
   title: "Believe",
-  description: "PCA Church's statement of Belief",
+  description: "PCA Church's statements of Belief",
 };
 
 export default async function Believe() {
