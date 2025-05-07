@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./components.module.css";
 import { FacebookRounded } from "@mui/icons-material";
 import { YouTube } from "@mui/icons-material";
-import { TransitionLink } from "./utils/TransitionLink";
+
 
 export default function Footer() {
   return (
@@ -13,27 +13,27 @@ export default function Footer() {
         <div className={styles.footercontent}>
           <div className={styles.footerlinks}>
             <div className={styles.footerwebsitelinkscontainer}>
-              <TransitionLink href={"/"} className={styles.footerwebsitelink}>
+              <Link href={"/"} className={styles.footerwebsitelink}>
                 Home
-              </TransitionLink>
-              <TransitionLink
+              </Link>
+              <Link
                 href={"/believe"}
                 className={styles.footerwebsitelink}
               >
                 What We Believe
-              </TransitionLink>
-              <TransitionLink
+              </Link>
+              <Link
                 href={"/give"}
                 className={styles.footerwebsitelink}
               >
                 Give
-              </TransitionLink>
-              <TransitionLink
+              </Link>
+              <Link
                 href={"/visit"}
                 className={styles.footerwebsitelink}
               >
                 Plan A Visit
-              </TransitionLink>
+              </Link>
             </div>
             <div className={styles.footerexternallinkscontainer}>
               <Link href={"https://www.facebook.com/pcasydney/"}>

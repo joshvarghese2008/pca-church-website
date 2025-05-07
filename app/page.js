@@ -1,19 +1,32 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Script from "next/script";
 import Head from "next/head";
+import { motion } from "motion/react";
+
 // import { supabase } from "./components/utils/supabase";
 
-export default async function Home() {
+export default function Home() {
   // const { data: notes } = await supabase.from("sermons").select();
 
   // console.log(notes.at(-1).title);
 
+  const transition = {
+    duration: 0.5,
+    delay: 1,
+  };
+
   return (
     <>
-    <Head>
-      <link rel="canonical" href="https://pcachurchsydney.com/" key="canonical" />
-    </Head>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://pcachurchsydney.com/"
+          key="canonical"
+        />
+      </Head>
       <div className={styles.hero}>
         <Image
           src="/images/services.png"
@@ -31,14 +44,32 @@ export default async function Home() {
             </div>
           </div>
           <div className={styles.herotimings}>
-            <div className={styles.herotimingssundayservice}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: transition.delay + 1.2,
+                duration: transition.duration,
+              }}
+              className={styles.herotimingssundayservice}
+            >
               <p className={styles.herotimingstitle}>Sunday Service:</p>
               <p className={styles.herotimingstime}>9am - 11:30am</p>
-            </div>
-            <div className={styles.herotimingssundayschool}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: transition.delay + 1.5,
+                duration: transition.duration,
+              }}
+              viewport={{ once: true }}
+              className={styles.herotimingssundayschool}
+            >
               <p className={styles.herotimingstitle}>Sunday School:</p>
               <p className={styles.herotimingstime}>11:30am - 12pm</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -70,22 +101,58 @@ export default async function Home() {
             </p>
           </div>
           <div className={styles.servicescontent}>
-            <div className={styles.service}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: transition.delay - 0.2,
+                duration: transition.duration,
+              }}
+              viewport={{ once: true }}
+              className={styles.service}
+            >
               <p className={styles.servicetitle}>Sunday Service</p>
               <p className={styles.servicetime}>9am - 11:30am</p>
-            </div>
-            <div className={styles.service}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: transition.delay,
+                duration: transition.duration,
+              }}
+              viewport={{ once: true }}
+              className={styles.service}
+            >
               <p className={styles.servicetitle}>Sunday School</p>
               <p className={styles.servicetime}>11:30am - 12pm</p>
-            </div>
-            <div className={styles.service}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: transition.delay + 0.2,
+                duration: transition.duration,
+              }}
+              viewport={{ once: true }}
+              className={styles.service}
+            >
               <p className={styles.servicetitle}>Friday Meeting</p>
               <p className={styles.servicetime}>7:30pm - 9pm</p>
-            </div>
-            <div className={styles.service}>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: transition.delay + 0.4,
+                duration: transition.duration,
+              }}
+              viewport={{ once: true }}
+              className={styles.service}
+            >
               <p className={styles.servicetitle}>Wednesday Prayer Meeting</p>
               <p className={styles.servicetime}>7:30pm - 9pm</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

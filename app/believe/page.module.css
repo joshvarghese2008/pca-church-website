@@ -78,8 +78,6 @@
     margin: 0 auto;
     width: 100%;
     font-size: 1.2rem;
-
-    /* height: 140px; */
   }
 
   .believecontent {
@@ -88,4 +86,10 @@
 
   .believetitle {
     display: inline;
+  }
+
+  .believeverses {
+    margin-top: 10px;
+    font-style: italic;
+    text-decoration: underline;
   }

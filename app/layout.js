@@ -105,7 +105,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={monotypeCorsiva.className}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Toaster />
         <Analytics />
         <SpeedInsights />
