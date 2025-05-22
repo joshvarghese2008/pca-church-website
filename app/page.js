@@ -26,6 +26,38 @@ export default function Home() {
           href="https://pcachurchsydney.com/"
           key="canonical"
         />
+
+        {/* Some other code may come here */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://pcachurchsydney.com/",
+      "sameAs": ["https://www.pcachurchsydney.com/"],
+      "logo": "https://www.example.com/images/logo.png",
+      "name": "Pentecostal Christian Assembly",
+      "alternateName": "PCA Church",
+      "founder": {
+        "@type": "Person",
+        "name": "Pastor Babu Varghese"
+      },
+      "description": "Pentecostal Christian Assembly (PCA Church) is a Malayalam church located in South-West Sydney, Ingleburn. We are a growing church that seeks to be a place where individuals and families can come together to grow in faith and deepen their understanding of Jesus Christ.",
+      "email": "pastor@pcachurchsydney.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7/79 Williamson Rd",
+        "addressLocality": "Ingleburn",
+        "addressCountry": "AU",
+        "addressRegion": "NSW",
+        "postalCode": "2565"
+      },
+    }
+`,
+          }}
+        ></script>
       </Head>
       <div className={styles.hero}>
         <Image
