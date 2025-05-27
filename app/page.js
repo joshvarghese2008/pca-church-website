@@ -51,13 +51,14 @@ export default function Home() {
         />
 
         {/* Some other code may come here */}
-        <script
+        
+      </Head>
+      <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organisationStructuredData),
           }}
         />
-      </Head>
       <div className={styles.hero}>
         <Image
           src="/images/services.png"
