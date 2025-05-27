@@ -18,7 +18,7 @@ export default function Home() {
     "@type": "Organization",
     url: "https://pcachurchsydney.com/",
     sameAs: ["https://www.pcachurchsydney.com/"],
-    logo: "https://pcachurchsydney.com/images/logo.png",
+    logo: "https://pcachurchsydney.com/images/churchlogo.png",
     name: "Pentecostal Christian Assembly",
     alternateName: "PCA Church",
     description:
