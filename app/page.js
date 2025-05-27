@@ -17,7 +17,10 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     url: "https://pcachurchsydney.com/",
-    sameAs: ["https://www.pcachurchsydney.com/"],
+    sameAs: [
+      "https://www.pcachurchsydney.com/",
+      `https://www.facebook.com/pcasydney`,
+    ],
     logo: "https://pcachurchsydney.com/images/churchlogo.png",
     name: "Pentecostal Christian Assembly",
     alternateName: "PCA Church",
@@ -33,7 +36,6 @@ export default function Home() {
       postalCode: "2565",
     },
     telephone: "+61423358312",
-    sameAs: ["https://www.facebook.com/pcasydney"],
   };
 
   const transition = {
@@ -51,14 +53,13 @@ export default function Home() {
         />
 
         {/* Some other code may come here */}
-        
       </Head>
       <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organisationStructuredData),
-          }}
-        />
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organisationStructuredData),
+        }}
+      />
       <div className={styles.hero}>
         <Image
           src="/images/services.png"
