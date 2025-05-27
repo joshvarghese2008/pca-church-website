@@ -13,6 +13,30 @@ export default function Home() {
 
   // console.log(notes.at(-1).title);
 
+  const localBusinessStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://pcachurchsydney.com/",
+    "sameAs": ["https://www.pcachurchsydney.com/"],
+    "logo": "https://pcachurchsydney.com/images/logo.png",
+    "name": "Pentecostal Christian Assembly",
+    "alternateName": "PCA Church",
+    "description": "Pentecostal Christian Assembly (PCA Church) is a Malayalam church located in South-West Sydney, Ingleburn. We are a growing church that seeks to be a place where individuals and families can come together to grow in faith and deepen their understanding of Jesus Christ.",
+    "email": "pastor@pcachurchsydney.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7/79 Williamson Rd",
+      "addressLocality": "Ingleburn",
+      "addressCountry": "AU",
+      "addressRegion": "NSW",
+      "postalCode": "2565"
+    },
+    "telephone": "+61423358312",
+    "sameAs": [
+      "https://www.facebook.com/pcasydney",
+    ]
+  }
+
   const transition = {
     duration: 0.5,
     delay: 1,

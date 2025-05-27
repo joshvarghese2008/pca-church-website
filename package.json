@@ -21,7 +21,7 @@
     "@radix-ui/react-popover": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.5",
-    "@react-email/components": "^0.0.31",
+    "@react-email/components": "^0.0.41",
     "@supabase/supabase-js": "^2.47.10",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
@@ -36,6 +36,7 @@
     "react-dom": "19.0.0",
     "react-hook-form": "^7.54.2",
     "resend": "^4.0.1",
+    "schema-dts": "^1.1.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.1"
