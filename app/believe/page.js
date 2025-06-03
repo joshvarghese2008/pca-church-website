@@ -15,8 +15,7 @@ export const metadata = {
   ],
   openGraph: {
     title: "Believe",
-    description:
-      "This is the page where we share what we believe as a church.",
+    description: "This is the page where we share what we believe as a church.",
     url: "https://pcachurchsydney.com/believe",
     siteName: "PCA Church",
     images: [
@@ -36,6 +35,13 @@ export default async function Believe() {
   const statements = await getLocalData();
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://pcachurchsydney.com/believe"
+          key="canonical"
+        />
+      </Head>
       <div className={styles.hero}>
         <div className={styles.herocentre}>
           <div />
@@ -51,14 +57,14 @@ export default async function Believe() {
             width: "100%",
           }} /> */}
           {statements.map((statement) => {
-            return (            
-                <BelieveCard
-                  key={statement.key}
-                  id={statement.key}
-                  title={statement.title}
-                  description={statement.description}
-                  verses={statement.verses}
-                />
+            return (
+              <BelieveCard
+                key={statement.key}
+                id={statement.key}
+                title={statement.title}
+                description={statement.description}
+                verses={statement.verses}
+              />
             );
           })}
         </div>

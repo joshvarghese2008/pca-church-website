@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { Metadata } from "next";
 import { motion } from "motion/react";
 import VisitContent from "./visitContent";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Visit",
@@ -27,5 +28,16 @@ export const metadata: Metadata = {
 };
 
 export default function Visit() {
-  return <VisitContent />;
+  return (
+    <>
+    <Head>
+      <link
+          rel="canonical"
+          href="https://www.churchwebsite.com/visit"
+          key="canonical"
+        />
+    </Head>
+      <VisitContent />
+    </>
+  );
 }
