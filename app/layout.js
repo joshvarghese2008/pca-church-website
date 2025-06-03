@@ -25,8 +25,13 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    template: '%s | Pentecostal Christian Assembly',
-    default: 'Pentecostal Christian Assembly',
+    template: '%s | Pentecostal Christian Assembly (Malayalam Pentecostal Church)',
+    // The title will be replaced with the page title if provided
+    // e.g. 'Sermons | Pentecostal Christian Assembly (Malayalam Pentecostal Church)'
+    // If no page title is provided, it will default to the value below
+    // e.g. 'Pentecostal Christian Assembly (Malayalam Pentecostal Church)'
+    // If you want to use a different title for the homepage, you can set it in the page metadata
+    default: 'Pentecostal Christian Assembly (Malayalam Pentecostal Church)',
   },
   description:
     "PCA Church is a Malayalam Pentecostal Church located in Ingleburn (south-west of Sydney), Australia. We are a community of believers who gather to worship, pray, and grow in faith together. Join us for services, Bible studies, and fellowship.",
