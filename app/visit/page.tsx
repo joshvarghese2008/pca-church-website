@@ -6,12 +6,26 @@ import VisitContent from "./visitContent";
 
 export const metadata: Metadata = {
   title: "Visit",
-  description: "Visit our church. Sunday Service: 9am - 11:30am",
+  description:
+    "Please feel free this Sunday to visit our church and join us for worship. Our service starts at 9 AM",
+  keywords: ["visit", "church", "worship", "service", "Sunday"],
+  openGraph: {
+    title: "Visit",
+    description:
+      "Please feel free this Sunday to visit our church and join us for worship. Our service starts at 9 AM",
+    url: "https://www.churchwebsite.com/visit",
+    images: [
+      {
+        url: "https://pcachurchsydney.com/images/churchlogo.png",
+        width: 800,
+        height: 600,
+        alt: "Church Logo",
+      },
+    ],
+    siteName: "Church Website",
+  },
 };
 
 export default function Visit() {
-
-  return (
-    <VisitContent />
-  );
+  return <VisitContent />;
 }

@@ -29,7 +29,7 @@ export const metadata = {
     default: 'Pentecostal Christian Assembly',
   },
   description:
-    "PCA Church is a Malayalam church located in Ingleburn, New South Wales",
+    "PCA Church is a Malayalam Pentecostal Church located in Ingleburn (south-west of Sydney), Australia. We are a community of believers who gather to worship, pray, and grow in faith together. Join us for services, Bible studies, and fellowship.",
   keywords: [
     "Church near me",
     "Malayalam Church",

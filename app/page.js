@@ -25,7 +25,7 @@ export default function Home() {
     name: "Pentecostal Christian Assembly",
     alternateName: "PCA Church",
     description:
-      "Pentecostal Christian Assembly (PCA Church) is a Malayalam church located in South-West Sydney, Ingleburn. We are a growing church that seeks to be a place where individuals and families can come together to grow in faith and deepen their understanding of Jesus Christ.",
+      "Pentecostal Christian Assembly (PCA Church) is a Malayalam church located in Ingleburn (south-west of Sydney), Australia. We are a growing church that seeks to be a place where individuals and families can come together to grow in faith and deepen their understanding of Jesus Christ.",
     email: "pastor@pcachurchsydney.com",
     address: {
       "@type": "PostalAddress",

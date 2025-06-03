@@ -4,7 +4,32 @@ import BelieveCard from "./believeCard";
 
 export const metadata = {
   title: "Believe",
-  description: "PCA Church's statements of Belief",
+  description: "This is the page where we share what we believe as a church.",
+  keywords: [
+    "PCA Church",
+    "Pentecostal Christian Assembly",
+    "Believe",
+    "Faith",
+    "Christianity",
+    "What We Believe",
+  ],
+  openGraph: {
+    title: "Believe",
+    description:
+      "This is the page where we share what we believe as a church.",
+    url: "https://pcachurchsydney.com/believe",
+    siteName: "PCA Church",
+    images: [
+      {
+        url: "https://pcachurchsydney.com/images/churchlogo.png",
+        width: 800,
+        height: 600,
+        alt: "PCA Church Logo",
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
 };
 
 export default async function Believe() {
