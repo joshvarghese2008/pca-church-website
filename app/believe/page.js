@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import { getLocalData } from "./getdata";
 import BelieveCard from "./believeCard";
+import Head from "next/head";
 
 export const metadata = {
   title: "Believe",

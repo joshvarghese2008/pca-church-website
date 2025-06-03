@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import { motion } from "motion/react";
 import GiveContent from "./giveContent";
+import Head from "next/head";
 
 export const metadata = {
   title: "Give",
