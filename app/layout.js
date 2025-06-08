@@ -11,6 +11,8 @@ import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
+import GoogleAnalytics from "./GoogleAnalytics";
+
 import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
@@ -76,6 +78,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={monotypeCorsiva.className}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
+        <GoogleAnalytics />
         <main>{children}</main>
         <Toaster />
         <Analytics />
