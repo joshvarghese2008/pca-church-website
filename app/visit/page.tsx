@@ -33,7 +33,7 @@ export default function Visit() {
     <Head>
       <link
           rel="canonical"
-          href="https://www.churchwebsite.com/visit"
+          href="https://pcachurchsydney.com/visit"
           key="canonical"
         />
     </Head>
