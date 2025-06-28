@@ -47,7 +47,6 @@
 }
 
 .herochurchname {
-
   height: 80px;
   display: flex;
   justify-content: center;
@@ -113,7 +112,7 @@
   .herochurchname {
     flex-direction: column;
   }
-  
+
   .herochurchinitials {
     height: 100px;
   }
@@ -155,7 +154,6 @@
     font-size: 50px;
   }
 }
-
 
 .aboutcontainer {
   margin-left: auto;
@@ -199,7 +197,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.70);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -258,7 +256,6 @@
 }
 
 @media only screen and (max-width: 655px) {
-
   .servicesubtitle {
     padding-right: 0;
   }
@@ -275,7 +272,6 @@
   .servicescontent {
     width: 100%;
   }
-  
 }
 
 .sermonVideoContainer {
@@ -314,4 +310,34 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.addressSection {
+  width: 100%;
+  background: #f9f9f9;
+  padding: 1.7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address {
+  font-size: 1.7rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.7;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .address {
+    font-size: 1.15rem;
+    padding: 0;
+  }
 }

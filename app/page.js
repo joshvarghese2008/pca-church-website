@@ -106,6 +106,24 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section
+        className={styles.addressSection}
+        itemScope
+        itemType="https://schema.org/Church"
+      >
+        <address
+          className={styles.address}
+          itemProp="address"
+          itemScope
+          itemType="https://schema.org/PostalAddress"
+        >
+          <span itemProp="streetAddress">7/79 Williamson Rd</span>,{" "}
+          <span itemProp="addressLocality">Ingleburn</span>,{" "}
+          <span itemProp="addressRegion">NSW</span>{" "}
+          <span itemProp="postalCode">2565</span>,{" "}
+          <span itemProp="addressCountry">Australia</span>
+        </address>
+      </section>
       <div className={styles.aboutcontainer}>
         <p className={styles.slogantext}>
           A place where Faith, Community, and Love grow together in service of
