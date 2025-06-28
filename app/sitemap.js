@@ -1,22 +1,22 @@
 export default function sitemap() {
     return [
       {
-        url: 'https://pcachurchsydney.com/',
+        url: 'https://www.pcachurchsydney.com/',
         lastModified: new Date(),
         priority: 1,
       },
       {
-        url: 'https://pcachurchsydney.com/believe',
+        url: 'https://www.pcachurchsydney.com/believe',
         lastModified: new Date(),
         priority: 0.5,
       },
       {
-        url: 'https://pcachurchsydney.com/give',
+        url: 'https://www.pcachurchsydney.com/give',
         lastModified: new Date(),
         priority: 0.5,
       },
       {
-        url: 'https://pcachurchsydney.com/visit',
+        url: 'https://www.pcachurchsydney.com/visit',
         lastModified: new Date(),
         priority: 0.9,
       },
