@@ -36,13 +36,6 @@ export default async function Believe() {
   const statements = await getLocalData();
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://pcachurchsydney.com/believe"
-          key="canonical"
-        />
-      </Head>
       <div className={styles.hero}>
         <div className={styles.herocentre}>
           <div />

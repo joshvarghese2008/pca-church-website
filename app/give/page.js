@@ -54,13 +54,6 @@ const transition = {
 export default function Give() {
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://pcachurchsydney.com/give"
-          key="canonical"
-        />
-      </Head>
       <GiveContent />
     </>
   );

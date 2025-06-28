@@ -30,13 +30,6 @@ export const metadata: Metadata = {
 export default function Visit() {
   return (
     <>
-    <Head>
-      <link
-          rel="canonical"
-          href="https://pcachurchsydney.com/visit"
-          key="canonical"
-        />
-    </Head>
       <VisitContent />
     </>
   );

@@ -45,15 +45,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <link
-          rel="canonical"
-          href="https://pcachurchsydney.com/"
-          key="canonical"
-        />
-
-        {/* Some other code may come here */}
-      </Head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
