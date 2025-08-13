@@ -20,11 +20,11 @@ export const metadata = {
     title: "Give",
     description:
       "Donation page of PCA Church | Currently we only allow giving in-person",
-    url: "https://pcachurchsydney.com/give",
+    url: "https://www.pcachurchsydney.com/give",
     siteName: "PCA Church",
     images: [
       {
-        url: "https://pcachurchsydney.com/images/churchlogo.png",
+        url: "https://www.pcachurchsydney.com/images/churchlogo.png",
         width: 800,
         height: 600,
         alt: "PCA Church Logo",

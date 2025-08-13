@@ -17,11 +17,11 @@ export const metadata = {
   openGraph: {
     title: "Believe",
     description: "This is the page where we share what we believe as a church.",
-    url: "https://pcachurchsydney.com/believe",
+    url: "https://www.pcachurchsydney.com/believe",
     siteName: "PCA Church",
     images: [
       {
-        url: "https://pcachurchsydney.com/images/churchlogo.png",
+        url: "https://www.pcachurchsydney.com/images/churchlogo.png",
         width: 800,
         height: 600,
         alt: "PCA Church Logo",

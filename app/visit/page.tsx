@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://www.churchwebsite.com/visit",
     images: [
       {
-        url: "https://pcachurchsydney.com/images/churchlogo.png",
+        url: "https://www.pcachurchsydney.com/images/churchlogo.png",
         width: 800,
         height: 600,
         alt: "Church Logo",

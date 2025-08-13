@@ -16,12 +16,11 @@ export default function Home() {
   const organisationStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    url: "https://pcachurchsydney.com/",
+    url: "https://www.pcachurchsydney.com/",
     sameAs: [
-      "https://www.pcachurchsydney.com/",
       `https://www.facebook.com/pcasydney`,
     ],
-    logo: "https://pcachurchsydney.com/images/churchlogo.png",
+    logo: "https://www.pcachurchsydney.com/images/churchlogo.png",
     name: "Pentecostal Christian Assembly",
     alternateName: "PCA Church",
     description:

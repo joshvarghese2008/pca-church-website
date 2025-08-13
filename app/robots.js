@@ -3,6 +3,6 @@ export default function robots() {
       rules: {
         userAgent: '*',
       },
-      sitemap: 'https://pcachurchsydney.com/sitemap.xml',
+      sitemap: 'https://www.pcachurchsydney.com/sitemap.xml',
     }
   }
