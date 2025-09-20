@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import styles from "./components.module.css";
-import { FacebookRounded } from "@mui/icons-material";
-import { YouTube } from "@mui/icons-material";
+import { FacebookRounded, YouTube, Instagram } from "@mui/icons-material";
 
 
 export default function Footer() {
@@ -36,12 +35,15 @@ export default function Footer() {
               </Link>
             </div>
             <div className={styles.footerexternallinkscontainer}>
-              <Link href={"https://www.facebook.com/pcasydney/"}>
+              <Link href={"https://www.facebook.com/pcasydney/"} className={styles.footericonlink}>
                 <FacebookRounded color="black" />
               </Link>
-              {/* <Link href={"/"}>
-                <YouTube />
-              </Link> */}
+              <Link href={"https://www.youtube.com/@pcachurchsydney"} className={styles.footericonlink}>
+                <YouTube color="black" />
+              </Link>
+              <Link href={"https://www.instagram.com/pcachurchsydney"} className={styles.footericonlink}>
+                <Instagram color="black" />
+              </Link>
             </div>
           </div>
           <hr className={styles.footerdivider} />
