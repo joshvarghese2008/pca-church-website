@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 export default function BelieveCard({ key, id, title, description, verses }) {
   const transition = {
     duration: 1,
-    delay: 0.6,
+    delay: 0.3,
   };
   const statements = {
     key,

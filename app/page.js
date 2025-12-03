@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import Script from "next/script";
 import Head from "next/head";
 import { motion } from "motion/react";
+import { MotionImage } from "./components/MotionImage";
 
 // import { supabase } from "./components/utils/supabase";
 
@@ -51,10 +52,16 @@ export default function Home() {
         }}
       />
       <div className={styles.hero}>
-        <Image
-          src="/images/services.png"
+        <MotionImage
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: transition.delay - 0.5
+          }}
+          src="/images/homehero.png"
           fill={true}
-          alt="Image of PCA Church entrance"
+          alt="Image of PCA Church Worship"
           className={styles.herovideobg}
         />
         <div className={styles.herocentre}>
@@ -72,7 +79,7 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
-                delay: transition.delay + 1.2,
+                delay: transition.delay + 1.6,
                 duration: transition.duration,
               }}
               className={styles.herotimingssundayservice}
@@ -84,7 +91,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 1.5,
+                delay: transition.delay + 2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -159,7 +166,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay,
+                delay: transition.delay + 0.2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -172,7 +179,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.2,
+                delay: transition.delay + 0.6,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -185,7 +192,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.4,
+                delay: transition.delay + 1,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}

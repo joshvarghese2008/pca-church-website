@@ -1,6 +1,7 @@
 .hero {
   height: 100vh;
-  background-color: #061941ce;
+  background-color: var(--primaryBrand1transp);
+  
   position: relative;
   overflow: hidden;
 }
@@ -14,6 +15,8 @@
   max-width: none;
   min-height: 100%;
   object-fit: cover;
+  filter: blur(3px);
+  
 }
 
 .herocentre {
@@ -43,7 +46,7 @@
 
   font-size: 90px;
   font-weight: 700;
-  color: white;
+  color: var(--primaryLight1)
 }
 
 .herochurchname {
@@ -59,9 +62,9 @@
 }
 
 .herochurchinitials {
-  font-family: monotypeCorsiva;
+  font-family: var(--brandFont);
   font-size: 100px;
-  color: white;
+  color: var(--primaryLight1);
   letter-spacing: 5px;
 
   margin: 0 20px 0 0;
@@ -72,7 +75,7 @@
 
   font-weight: 700;
   font-size: 90px;
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .herotimings {
@@ -92,6 +95,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 20px;
 }
 
 .herotimingstitle {
@@ -100,13 +105,15 @@
 
   margin-right: 5px;
 
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .herotimingstime {
   font-size: 25px;
-  color: white;
+  color: var(--primaryLight1);
 }
+
+
 
 @media only screen and (max-width: 550px) {
   .herochurchname {
@@ -170,7 +177,7 @@
   font-size: 2rem;
   font-style: italic;
   font-weight: 700;
-  color: #061941;
+  color: var(--primaryBrand1);
   text-align: center;
 }
 
@@ -187,7 +194,7 @@
   background-position: center;
   background-attachment: fixed;
   padding: 2rem 20px;
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .servicescontainer::before {
@@ -197,7 +204,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--primaryBrand2transp);
   z-index: 1;
 }
 
@@ -230,13 +237,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  color: white;
+  color: var(--primaryLight1);
   row-gap: 1rem;
   column-gap: 1rem;
 }
 
 .service {
-  background-color: #061941;
+  background-color: var(--primaryDark2);
   border-radius: 20px;
   padding: 1rem;
   /* margin: 1rem; */
@@ -291,7 +298,7 @@
 .sermonVideoTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #061941;
+  color: var(--primaryBrand1);
   margin-bottom: 20px;
   width: 100%;
 }
@@ -314,7 +321,7 @@
 
 .addressSection {
   width: 100%;
-  background: #f9f9f9;
+  background: var(--primaryLight2);
   padding: 1.7rem 0;
   display: flex;
   justify-content: center;

@@ -15,15 +15,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Calendar } from "@/components/ui/calendar";
-import { CalendarIcon } from "lucide-react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+// import { Calendar } from "@/components/ui/calendar";
+// import { CalendarIcon } from "lucide-react";
+// import {
+//   Popover,
+//   PopoverContent,
+//   PopoverTrigger,
+// } from "@/components/ui/popover";
+// import { cn } from "@/lib/utils";
+// import { format } from "date-fns";
 
 import { useToast } from "@/hooks/use-toast";
 
@@ -126,7 +126,7 @@ export default function VisitForm() {
               </FormItem>
             )}
           />
-          <FormField
+          {/* <FormField
             control={form.control}
             name="visitDate"
             render={({ field }) => (
@@ -166,7 +166,7 @@ export default function VisitForm() {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
           <Button className="w-full" type="submit">
             Submit
           </Button>

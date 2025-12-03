@@ -90,7 +90,7 @@ export default function VisitContent() {
                 <br />
                 <br />
                 There is a section in the service dedicated to children, where
-                they will receieve a short message <b>{"(in English)"}</b> and
+                they will receive a short message <b>{"(in English)"}</b> and
                 will be given the opportunity to say their memory verses and
                 sing a song. If your child is shy, they are welcome to sit with
                 you during this time.

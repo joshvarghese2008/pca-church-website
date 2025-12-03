@@ -42,13 +42,13 @@ export default function Navbar() {
         className={styles.navbar}
         style={
           navbar
-            ? { backgroundColor: "#061941" }
+            ? { backgroundColor: "var(--primaryDark1)" }
             : { backgroundColor: "transparent" }
         }
       >
         <div className={styles.navbarcentre}>
           <div className={styles.navbarcontent}>
-            <motion.div {...transition}>
+            <motion.div {...transition} transition={{ delay: 1 }}>
               <TransitionLink href={"/"}>
                 <Image
                   src={Logo}
@@ -60,7 +60,7 @@ export default function Navbar() {
             <div className="hidden md:flex">
               <ul className={styles.navbarlinks}>
                 {/* <li><Link href={'/'} className={styles.navbarlink}>Our Services</Link></li> */}
-                <motion.li {...transition} transition={{ delay: 1 }}>
+                <motion.li {...transition} transition={{ delay: 1.5 }}>
                   <TransitionLink
                     href={"/believe"}
                     className={styles.navbarlink}
@@ -68,12 +68,12 @@ export default function Navbar() {
                     What We Believe
                   </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 1.4 }}>
+                <motion.li {...transition} transition={{ delay: 1.9 }}>
                   <TransitionLink href={"/give"} className={styles.navbarlink}>
                     Give
                   </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 1.8 }}>
+                <motion.li {...transition} transition={{ delay: 2.3 }}>
                   <TransitionLink
                     href={"/visit"}
                     className={styles.navbarlinkbutton}

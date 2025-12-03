@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 import { getLocalData } from "./getdata";
 import BelieveCard from "./believeCard";
 import Head from "next/head";
+import Image from "next/image";
+import { MotionImage } from "../components/MotionImage";
 
 export const metadata = {
   title: "Believe",
@@ -34,13 +36,32 @@ export const metadata = {
 
 export default async function Believe() {
   const statements = await getLocalData();
+
+  const transition = {
+    duration: 0.5,
+    delay: 1,
+  };
+
   return (
     <>
       <div className={styles.hero}>
+        <MotionImage
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: transition.delay - 0.5
+          }}
+          src="/images/believehero.png"
+          fill={true}
+          alt="Image of PCA Church Worship"
+          className={styles.heroimagebg}
+        />
         <div className={styles.herocentre}>
           <div />
           <div className={styles.herotitle}>
-            <p className={styles.herotitletext}>What We Believe</p>
+            <p className={styles.herotitletext}>What we&nbsp;</p>
+            <p className={[styles.herotitletext]}>Believe</p>
           </div>
           <div />
         </div>

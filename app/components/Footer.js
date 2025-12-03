@@ -36,19 +36,19 @@ export default function Footer() {
             </div>
             <div className={styles.footerexternallinkscontainer}>
               <Link href={"https://www.facebook.com/pcasydney/"} className={styles.footericonlink}>
-                <FacebookRounded color="black" />
+                <FacebookRounded sx={{ color: "var(--secondaryBrand1)" }} />
               </Link>
               <Link href={"https://www.youtube.com/@pcachurchsydney"} className={styles.footericonlink}>
-                <YouTube color="black" />
+                <YouTube sx={{ color: "var(--secondaryBrand1)" }} />
               </Link>
               <Link href={"https://www.instagram.com/pcachurchsydney"} className={styles.footericonlink}>
-                <Instagram color="black" />
+                <Instagram sx={{ color: "var(--secondaryBrand1)" }} />
               </Link>
             </div>
           </div>
           <hr className={styles.footerdivider} />
           <div className={styles.footercopyright}>
-            <p style={{ color: "black" }}>
+            <p>
               &copy; {new Date().getFullYear()} PCA Church. All rights reserved
             </p>
           </div>
