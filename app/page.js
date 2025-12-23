@@ -4,8 +4,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Script from "next/script";
 import Head from "next/head";
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { MotionImage } from "./components/MotionImage";
+import Link from "next/link";
 
 // import { supabase } from "./components/utils/supabase";
 
@@ -41,6 +43,17 @@ export default function Home() {
   const transition = {
     duration: 0.5,
     delay: 1,
+  };
+
+  const aboutRef = useRef(null);
+
+  const handleScrollToAbout = () => {
+    if (!aboutRef.current) return;
+    aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // focus after a short delay so assistive tech lands on the section after scroll
+    window.setTimeout(() => {
+      aboutRef.current?.focus();
+    }, 600);
   };
 
   return (
@@ -84,8 +97,8 @@ export default function Home() {
               }}
               className={styles.herotimingssundayservice}
             >
-              <p className={styles.herotimingstitle}>Sunday Service:</p>
-              <p className={styles.herotimingstime}>9am - 11:30am</p>
+              <p className={styles.herotimingstitle}>Every Sunday at 9am</p>
+              {/* <p className={styles.herotimingstime}>7/79 Williamson Road, Ingleburn, NSW 2565</p> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -97,13 +110,28 @@ export default function Home() {
               viewport={{ once: true }}
               className={styles.herotimingssundayschool}
             >
-              <p className={styles.herotimingstitle}>Sunday School:</p>
-              <p className={styles.herotimingstime}>11:30am - 12pm</p>
+              {/* <p className={styles.herotimingstitle}>Sunday School:</p> */}
+              <Link className={styles.herotimingstime} href={'https://maps.google.com/maps/dir//Pentecostal+Christian+Assembly+(PCA+Church)+7%2F79+Williamson+Rd+Ingleburn+NSW+2565/@-33.9898947,150.8569674,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1b4f1f06a6157f5:0x9d36ddade8924711'}>7/79 Williamson Road, Ingleburn, NSW 2565</Link>
             </motion.div>
           </div>
-        </div>
+          <motion.button
+            className={styles.heroscrollbutton}
+            onClick={handleScrollToAbout}
+            aria-label="Scroll to about section"
+            initial={{ y: 0 }}
+            animate={{ y: [0, -8, 0] }}
+            transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.5, ease: "easeInOut" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className={styles.heroscrolllabel}>Explore</span>
+            <svg className={styles.heroscrollicon} viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.button>
+        </div> 
       </div>
-      <section
+      {/* <section
         className={styles.addressSection}
         itemScope
         itemType="https://schema.org/Church"
@@ -120,15 +148,15 @@ export default function Home() {
           <span itemProp="postalCode">2565</span>,{" "}
           <span itemProp="addressCountry">Australia</span>
         </address>
-      </section>
-      <div className={styles.aboutcontainer}>
+      </section> */}
+      <div ref={aboutRef} tabIndex={-1} className={styles.aboutcontainer}>
         <p className={styles.slogantext}>
           A place where Faith, Community, and Love grow together in service of
           our Lord and Saviour Jesus Christ!
         </p>
         <p className={styles.abouttext}>
-          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. The
-          mission of PCA Church is to guide people to the Lord Jesus Christ, who
+          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. Our
+          mission is to guide people to the Lord Jesus Christ, who
           is the only way to the Father. We want to be a place where individuals
           and families can come together to know Jesus, to grow in faith, and to
           deepen their knowledge of His Word. Our heart is to share the hope and

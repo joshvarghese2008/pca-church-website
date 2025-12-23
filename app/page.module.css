@@ -111,6 +111,69 @@
 .herotimingstime {
   font-size: 25px;
   color: var(--primaryLight1);
+  text-align: center;
+}
+
+.heroscrollbutton {
+  position: absolute;
+  bottom: 32px;
+  /* anchor to the viewport center to avoid layout shifts caused by wide internal children */
+  /* left: 50vw; */
+  transform: translateX(-50%);
+  z-index: 3;
+  /* background: var(--primaryBrand1); */
+  background-color: var(--secondaryBrand2);
+  color: var(--primaryLight1);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  will-change: transform;
+}
+
+.heroscrolllabel {
+  display: inline-block;
+  line-height: 1;
+}
+
+.heroscrollicon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  stroke: currentColor;
+  transition: transform .2s ease;
+}
+
+.heroscrollbutton:hover {
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.heroscrollbutton:hover .heroscrollicon {
+  transform: translateY(3px);
+}
+
+.heroscrollbutton:focus {
+  outline: 3px solid rgba(255,255,255,0.2);
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroscrollbutton {
+    bottom: 20px;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .heroscrollicon {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 
@@ -169,6 +232,9 @@
 
   width: 100%;
   max-width: 1140px;
+
+  /* ensure scrolling aligns below the fixed navbar */
+  scroll-margin-top: var(--navbar-height, 90px);
 
   /* background-color: #a9b2c6; */
 }

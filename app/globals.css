@@ -31,8 +31,9 @@
   --secondaryDark2: #53472D;
   --secondaryDark3: #6B6047;
 
-  --brandFont: monotypeCorsiva
-}
+  --brandFont: monotypeCorsiva;
+  --navbar-height: 90px;
+} 
 
 @media (prefers-color-scheme: dark) {
   /* :root {
