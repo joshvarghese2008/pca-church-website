@@ -94,6 +94,7 @@ export default function VisitForm() {
           fontWeight: "bold",
           marginTop: "20px",
           marginBottom: "20px",
+          color: "var(--primaryDark1)"
         }}
       >
         Visit Form
@@ -167,7 +168,7 @@ export default function VisitForm() {
               </FormItem>
             )}
           /> */}
-          <Button className="w-full" type="submit">
+          <Button style={{ borderRadius: "999px", backgroundColor: "var(--secondaryBrand1)"}} className="w-full" type="submit">
             Submit
           </Button>
           <FormDescription>

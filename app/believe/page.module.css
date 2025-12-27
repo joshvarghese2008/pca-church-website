@@ -91,6 +91,7 @@
 
 .believecontent {
   display: flex;
+  color: var(--primaryDark1);
 }
 
 .believetitle {
@@ -101,4 +102,5 @@
   margin-top: 10px;
   font-style: italic;
   text-decoration: underline;
+  color: var(--primaryDark2);
 }

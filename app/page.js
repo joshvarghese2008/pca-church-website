@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import { MotionImage } from "./components/MotionImage";
 import Link from "next/link";
+import { OpenInNew, OpenInNewOffRounded, OpenInNewOutlined, OpenInNewRounded } from "@mui/icons-material";
 
 // import { supabase } from "./components/utils/supabase";
 
@@ -111,7 +112,15 @@ export default function Home() {
               className={styles.herotimingssundayschool}
             >
               {/* <p className={styles.herotimingstitle}>Sunday School:</p> */}
-              <Link className={styles.herotimingstime} href={'https://maps.google.com/maps/dir//Pentecostal+Christian+Assembly+(PCA+Church)+7%2F79+Williamson+Rd+Ingleburn+NSW+2565/@-33.9898947,150.8569674,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1b4f1f06a6157f5:0x9d36ddade8924711'}>7/79 Williamson Road, Ingleburn, NSW 2565</Link>
+              <a
+                className={styles.herotimingstime}
+                href="https://maps.google.com/maps/dir//Pentecostal+Christian+Assembly+(PCA+Church)+7%2F79+Williamson+Rd+Ingleburn+NSW+2565/@-33.9898947,150.8569674,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1b4f1f06a6157f5:0x9d36ddade8924711"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open church location in Google Maps (opens in a new tab)"
+              >
+                7/79 Williamson Road, Ingleburn, NSW 2565 <OpenInNewRounded className={styles.externalIcon} />
+              </a>
             </motion.div>
           </div>
           <motion.button
@@ -124,7 +133,7 @@ export default function Home() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className={styles.heroscrolllabel}>Explore</span>
+            <span className={styles.heroscrolllabel}>Explore more</span>
             <svg className={styles.heroscrollicon} viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
               <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

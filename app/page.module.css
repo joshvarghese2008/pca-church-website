@@ -109,9 +109,23 @@
 }
 
 .herotimingstime {
-  font-size: 25px;
+  font-size: 23px; /* slightly smaller for balance */
   color: var(--primaryLight1);
   text-align: center;
+  display: inline;
+  line-height: 1.05;
+  transition: font-size 120ms ease;
+}
+
+.externalIcon {
+  width: 13px; /* slightly smaller icon */
+  height: 13px;
+  display: inline-block;
+  margin-left: 6px;
+  /* nudge slightly so the icon visually centers with text */
+  vertical-align: -0.11em;
+  stroke: currentColor;
+  transition: transform 120ms ease, width 120ms ease, height 120ms ease;
 }
 
 .heroscrollbutton {
@@ -207,6 +221,58 @@
   .herotimingstitle {
     margin-right: 0;
   }
+
+  /* small screen: slightly smaller address text + icon to keep them balanced */
+  .herotimingstime {
+    /* allow natural wrapping on small screens */
+    display: inline;
+    font-size: 20px;
+  }
+
+  .externalIcon {
+    width: 12px;
+    height: 12px;
+    vertical-align: -0.08em;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .herochurchinitials {
+    height: 90px;
+    font-size: 80px;
+  }
+
+  .herowelcome {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .herochurch {
+    font-size: 50px;
+  }
+
+  /* extra-small screens: reduce address text and icon a bit more */
+  .herotimingstime {
+    font-size: 18px;
+  }
+
+  .externalIcon {
+    width: 11px;
+    height: 11px;
+    vertical-align: -0.06em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .herotimingstime {
+    font-size: 16px;
+  }
+
+  .externalIcon {
+    width: 10px;
+    height: 10px;
+    vertical-align: -0.05em;
+  }
 }
 
 @media only screen and (max-width: 440px) {
@@ -243,7 +309,7 @@
   font-size: 2rem;
   font-style: italic;
   font-weight: 700;
-  color: var(--primaryBrand1);
+  color: var(--primaryDark1);
   text-align: center;
 }
 
@@ -251,6 +317,7 @@
   margin-top: 10px;
   font-size: 1.2rem;
   text-align: center;
+  color: var(--primaryDark2);
 }
 
 .servicescontainer {
@@ -296,6 +363,7 @@
 .servicesubtitle {
   font-size: 1.2rem;
   padding-right: 1.2rem;
+  color: var(--primaryLight2);
 }
 
 .servicescontent {
@@ -326,6 +394,7 @@
 
 .servicetime {
   font-size: 1.2rem;
+  color: var(--primaryLight2);
 }
 
 @media only screen and (max-width: 655px) {

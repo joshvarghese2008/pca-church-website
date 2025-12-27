@@ -62,18 +62,26 @@ export default function Navbar() {
                 {/* <li><Link href={'/'} className={styles.navbarlink}>Our Services</Link></li> */}
                 <motion.li {...transition} transition={{ delay: 1.5 }}>
                   <TransitionLink
+                    href={"/blog"}
+                    className={styles.navbarlink}
+                  >
+                    Blog
+                  </TransitionLink>
+                </motion.li>
+                <motion.li {...transition} transition={{ delay: 1.9 }}>
+                  <TransitionLink
                     href={"/believe"}
                     className={styles.navbarlink}
                   >
                     What We Believe
                   </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 1.9 }}>
+                <motion.li {...transition} transition={{ delay: 2.3 }}>
                   <TransitionLink href={"/give"} className={styles.navbarlink}>
                     Give
                   </TransitionLink>
                 </motion.li>
-                <motion.li {...transition} transition={{ delay: 2.3 }}>
+                <motion.li {...transition} transition={{ delay: 2.7 }}>
                   <TransitionLink
                     href={"/visit"}
                     className={styles.navbarlinkbutton}
@@ -96,6 +104,15 @@ export default function Navbar() {
         </div>
         {isOpen && (
           <div className="flex flex-col items-center basis-full bg-church-blue rounded-3xl mx-5 mb-5 pt-4 pb-5">
+            <TransitionLink
+              href={"blog"}
+              className={styles.navbarlinkmenu}
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              Blog
+            </TransitionLink>
             <TransitionLink
               href={"/believe"}
               className={styles.navbarlinkmenu}
