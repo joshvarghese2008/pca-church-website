@@ -4,7 +4,11 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Script from "next/script";
 import Head from "next/head";
+import { useRef } from "react";
 import { motion } from "motion/react";
+import { MotionImage } from "./components/MotionImage";
+import Link from "next/link";
+import { OpenInNew, OpenInNewOffRounded, OpenInNewOutlined, OpenInNewRounded } from "@mui/icons-material";
 
 // import { supabase } from "./components/utils/supabase";
 
@@ -42,6 +46,17 @@ export default function Home() {
     delay: 1,
   };
 
+  const aboutRef = useRef(null);
+
+  const handleScrollToAbout = () => {
+    if (!aboutRef.current) return;
+    aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // focus after a short delay so assistive tech lands on the section after scroll
+    window.setTimeout(() => {
+      aboutRef.current?.focus();
+    }, 600);
+  };
+
   return (
     <>
       <script
@@ -51,10 +66,16 @@ export default function Home() {
         }}
       />
       <div className={styles.hero}>
-        <Image
-          src="/images/services.png"
+        <MotionImage
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{
+            duration: 1,
+            delay: transition.delay - 0.5
+          }}
+          src="/images/homehero.png"
           fill={true}
-          alt="Image of PCA Church entrance"
+          alt="Image of PCA Church Worship"
           className={styles.herovideobg}
         />
         <div className={styles.herocentre}>
@@ -72,31 +93,54 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
-                delay: transition.delay + 1.2,
+                delay: transition.delay + 1.6,
                 duration: transition.duration,
               }}
               className={styles.herotimingssundayservice}
             >
-              <p className={styles.herotimingstitle}>Sunday Service:</p>
-              <p className={styles.herotimingstime}>9am - 11:30am</p>
+              <p className={styles.herotimingstitle}>Every Sunday at 9am</p>
+              {/* <p className={styles.herotimingstime}>7/79 Williamson Road, Ingleburn, NSW 2565</p> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 1.5,
+                delay: transition.delay + 2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
               className={styles.herotimingssundayschool}
             >
-              <p className={styles.herotimingstitle}>Sunday School:</p>
-              <p className={styles.herotimingstime}>11:30am - 12pm</p>
+              {/* <p className={styles.herotimingstitle}>Sunday School:</p> */}
+              <a
+                className={styles.herotimingstime}
+                href="https://maps.google.com/maps/dir//Pentecostal+Christian+Assembly+(PCA+Church)+7%2F79+Williamson+Rd+Ingleburn+NSW+2565/@-33.9898947,150.8569674,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1b4f1f06a6157f5:0x9d36ddade8924711"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open church location in Google Maps (opens in a new tab)"
+              >
+                7/79 Williamson Road, Ingleburn, NSW 2565 <OpenInNewRounded className={styles.externalIcon} />
+              </a>
             </motion.div>
           </div>
-        </div>
+          <motion.button
+            className={styles.heroscrollbutton}
+            onClick={handleScrollToAbout}
+            aria-label="Scroll to about section"
+            initial={{ y: 0 }}
+            animate={{ y: [0, -8, 0] }}
+            transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.5, ease: "easeInOut" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className={styles.heroscrolllabel}>Explore more</span>
+            <svg className={styles.heroscrollicon} viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.button>
+        </div> 
       </div>
-      <section
+      {/* <section
         className={styles.addressSection}
         itemScope
         itemType="https://schema.org/Church"
@@ -113,15 +157,15 @@ export default function Home() {
           <span itemProp="postalCode">2565</span>,{" "}
           <span itemProp="addressCountry">Australia</span>
         </address>
-      </section>
-      <div className={styles.aboutcontainer}>
+      </section> */}
+      <div ref={aboutRef} tabIndex={-1} className={styles.aboutcontainer}>
         <p className={styles.slogantext}>
           A place where Faith, Community, and Love grow together in service of
           our Lord and Saviour Jesus Christ!
         </p>
         <p className={styles.abouttext}>
-          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. The
-          mission of PCA Church is to guide people to the Lord Jesus Christ, who
+          PCA is a Malayalam Pentecostal Church located in Ingleburn, NSW. Our
+          mission is to guide people to the Lord Jesus Christ, who
           is the only way to the Father. We want to be a place where individuals
           and families can come together to know Jesus, to grow in faith, and to
           deepen their knowledge of His Word. Our heart is to share the hope and
@@ -159,7 +203,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay,
+                delay: transition.delay + 0.2,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -172,7 +216,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.2,
+                delay: transition.delay + 0.6,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}
@@ -185,7 +229,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
-                delay: transition.delay + 0.4,
+                delay: transition.delay + 1,
                 duration: transition.duration,
               }}
               viewport={{ once: true }}

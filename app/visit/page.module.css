@@ -1,6 +1,6 @@
 .hero {
   height: 60vh;
-  background-color: #061941e0;
+  background-color: var(--primaryBrand1transp);
   position: relative;
   overflow: hidden;
 }
@@ -54,7 +54,6 @@
 
 .visitContainer {
   padding: 20px;
-  background-color: #fff;
 }
 
 .visitCentre {
@@ -76,6 +75,7 @@
 .blurbcontainer p {
   font-size: 1.2rem;
   text-align: center;
+  color: var(--primaryDark2);
 }
 
 .addresscontainer {
@@ -83,7 +83,7 @@
   flex: 1;
   justify-content: space-between;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--primaryLight2);
   border-radius: 20px;
 }
 
@@ -136,13 +136,13 @@
 .visitcontenttitle {
   font-size: 2rem;
   font-weight: bold;
-  color: #061941;
+  color: var(--primaryDark1);
   margin-bottom: 0.5rem;
 }
 
 .visitcontenttext {
   font-size: 1.2rem;
-  color: #000000;
+  color: var(--primaryDark2);
 }
 
 .mapvisit {

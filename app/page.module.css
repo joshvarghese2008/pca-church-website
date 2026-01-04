@@ -1,6 +1,7 @@
 .hero {
   height: 100vh;
-  background-color: #061941ce;
+  background-color: var(--primaryBrand1transp);
+  
   position: relative;
   overflow: hidden;
 }
@@ -14,6 +15,8 @@
   max-width: none;
   min-height: 100%;
   object-fit: cover;
+  filter: blur(3px);
+  
 }
 
 .herocentre {
@@ -43,7 +46,7 @@
 
   font-size: 90px;
   font-weight: 700;
-  color: white;
+  color: var(--primaryLight1)
 }
 
 .herochurchname {
@@ -59,9 +62,9 @@
 }
 
 .herochurchinitials {
-  font-family: monotypeCorsiva;
+  font-family: var(--brandFont);
   font-size: 100px;
-  color: white;
+  color: var(--primaryLight1);
   letter-spacing: 5px;
 
   margin: 0 20px 0 0;
@@ -72,7 +75,7 @@
 
   font-weight: 700;
   font-size: 90px;
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .herotimings {
@@ -92,6 +95,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 20px;
 }
 
 .herotimingstitle {
@@ -100,13 +105,92 @@
 
   margin-right: 5px;
 
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .herotimingstime {
-  font-size: 25px;
-  color: white;
+  font-size: 23px; /* slightly smaller for balance */
+  color: var(--primaryLight1);
+  text-align: center;
+  display: inline;
+  line-height: 1.05;
+  transition: font-size 120ms ease;
 }
+
+.externalIcon {
+  width: 13px; /* slightly smaller icon */
+  height: 13px;
+  display: inline-block;
+  margin-left: 6px;
+  /* nudge slightly so the icon visually centers with text */
+  vertical-align: -0.11em;
+  stroke: currentColor;
+  transition: transform 120ms ease, width 120ms ease, height 120ms ease;
+}
+
+.heroscrollbutton {
+  position: absolute;
+  bottom: 32px;
+  /* anchor to the viewport center to avoid layout shifts caused by wide internal children */
+  /* left: 50vw; */
+  transform: translateX(-50%);
+  z-index: 3;
+  /* background: var(--primaryBrand1); */
+  background-color: var(--secondaryBrand2);
+  color: var(--primaryLight1);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  will-change: transform;
+}
+
+.heroscrolllabel {
+  display: inline-block;
+  line-height: 1;
+}
+
+.heroscrollicon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  stroke: currentColor;
+  transition: transform .2s ease;
+}
+
+.heroscrollbutton:hover {
+  transform: translateX(-50%) translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.heroscrollbutton:hover .heroscrollicon {
+  transform: translateY(3px);
+}
+
+.heroscrollbutton:focus {
+  outline: 3px solid rgba(255,255,255,0.2);
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroscrollbutton {
+    bottom: 20px;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .heroscrollicon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
 
 @media only screen and (max-width: 550px) {
   .herochurchname {
@@ -137,6 +221,58 @@
   .herotimingstitle {
     margin-right: 0;
   }
+
+  /* small screen: slightly smaller address text + icon to keep them balanced */
+  .herotimingstime {
+    /* allow natural wrapping on small screens */
+    display: inline;
+    font-size: 20px;
+  }
+
+  .externalIcon {
+    width: 12px;
+    height: 12px;
+    vertical-align: -0.08em;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .herochurchinitials {
+    height: 90px;
+    font-size: 80px;
+  }
+
+  .herowelcome {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .herochurch {
+    font-size: 50px;
+  }
+
+  /* extra-small screens: reduce address text and icon a bit more */
+  .herotimingstime {
+    font-size: 18px;
+  }
+
+  .externalIcon {
+    width: 11px;
+    height: 11px;
+    vertical-align: -0.06em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .herotimingstime {
+    font-size: 16px;
+  }
+
+  .externalIcon {
+    width: 10px;
+    height: 10px;
+    vertical-align: -0.05em;
+  }
 }
 
 @media only screen and (max-width: 440px) {
@@ -163,6 +299,9 @@
   width: 100%;
   max-width: 1140px;
 
+  /* ensure scrolling aligns below the fixed navbar */
+  scroll-margin-top: var(--navbar-height, 90px);
+
   /* background-color: #a9b2c6; */
 }
 
@@ -170,7 +309,7 @@
   font-size: 2rem;
   font-style: italic;
   font-weight: 700;
-  color: #061941;
+  color: var(--primaryDark1);
   text-align: center;
 }
 
@@ -178,6 +317,7 @@
   margin-top: 10px;
   font-size: 1.2rem;
   text-align: center;
+  color: var(--primaryDark2);
 }
 
 .servicescontainer {
@@ -187,7 +327,7 @@
   background-position: center;
   background-attachment: fixed;
   padding: 2rem 20px;
-  color: white;
+  color: var(--primaryLight1);
 }
 
 .servicescontainer::before {
@@ -197,7 +337,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--primaryBrand2transp);
   z-index: 1;
 }
 
@@ -223,6 +363,7 @@
 .servicesubtitle {
   font-size: 1.2rem;
   padding-right: 1.2rem;
+  color: var(--primaryLight2);
 }
 
 .servicescontent {
@@ -230,13 +371,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  color: white;
+  color: var(--primaryLight1);
   row-gap: 1rem;
   column-gap: 1rem;
 }
 
 .service {
-  background-color: #061941;
+  background-color: var(--primaryDark2);
   border-radius: 20px;
   padding: 1rem;
   /* margin: 1rem; */
@@ -253,6 +394,7 @@
 
 .servicetime {
   font-size: 1.2rem;
+  color: var(--primaryLight2);
 }
 
 @media only screen and (max-width: 655px) {
@@ -291,7 +433,7 @@
 .sermonVideoTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #061941;
+  color: var(--primaryBrand1);
   margin-bottom: 20px;
   width: 100%;
 }
@@ -314,7 +456,7 @@
 
 .addressSection {
   width: 100%;
-  background: #f9f9f9;
+  background: var(--primaryLight2);
   padding: 1.7rem 0;
   display: flex;
   justify-content: center;

@@ -1,6 +1,6 @@
 .hero {
   height: 60vh;
-  background-color: #061941e0;
+  background-color: var(--primaryBrand1transp);
   position: relative;
   overflow: hidden;
 }
@@ -54,7 +54,6 @@
 
 .giveContainer {
   padding: 20px;
-  background-color: #fff;
 }
 
 .giveCentre {
@@ -65,14 +64,14 @@
 
 .verse {
   font-size: 2rem;
-  color: #061941;
+  color: var(--primaryDark1);
   margin-bottom: 20px;
 }
 
 .blurbtext {
   text-align: center;
   font-size: 1.2rem;
-  color: #000000;
+  color: var(--primaryDark2);
   margin-bottom: 20px;
 }
 
@@ -96,9 +95,13 @@
 .giveMethodTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #061941;
+  color: var(--primaryDark1);
   margin-bottom: 10px;
   text-align: center;
+}
+
+.giveMethodText {
+  color: var(--primaryDark2);
 }
 
 @media only screen and (max-width: 600px) {
