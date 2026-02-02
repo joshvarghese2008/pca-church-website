@@ -60,8 +60,7 @@ export default async function Believe() {
         <div className={styles.herocentre}>
           <div />
           <div className={styles.herotitle}>
-            <p className={styles.herotitletext}>What we&nbsp;</p>
-            <p className={[styles.herotitletext]}>Believe</p>
+            <p className={styles.herotitletext}>What we Believe</p>
           </div>
           <div />
         </div>

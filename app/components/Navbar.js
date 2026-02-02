@@ -28,7 +28,11 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", changeBackground);
-  });
+    
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   const transition = {
     initial: { opacity: 0 },
@@ -105,7 +109,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="flex flex-col items-center basis-full bg-church-blue rounded-3xl mx-5 mb-5 pt-4 pb-5">
             <TransitionLink
-              href={"blog"}
+              href={"/blog"}
               className={styles.navbarlinkmenu}
               onClick={() => {
                 setIsOpen(false);
