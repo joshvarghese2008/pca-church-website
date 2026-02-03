@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 export default function VisitContent() {
   const transition = {
     duration: 0.5,
-    delay: 0.1,
+    delay: 1,
   };
 
   return (
