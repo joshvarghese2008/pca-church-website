@@ -19,7 +19,7 @@ export default async function sitemap() {
     {
       url: `${base}/believe`,
       lastModified: new Date(),
-      priority: 0.5,
+      priority: 0.7,
     },
     {
       url: `${base}/give`,
