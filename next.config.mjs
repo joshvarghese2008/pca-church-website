@@ -12,6 +12,16 @@ const nextConfig = {
     //     }
     // }
     transpilePackages: ['next-mdx-remote'],
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'aqmnhjjxngwieybliscv.supabase.co',
+                port: '',
+                pathname: '/**'
+            }
+        ]
+    }
 };
 
 export default nextConfig;
