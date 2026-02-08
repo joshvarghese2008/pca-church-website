@@ -8,21 +8,23 @@ import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
 import { MotionImage } from "../../components/MotionImage";
 import CopyLink from "../../components/CopyLink";
 import Image from "next/image";
+import React from "react";
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
+  const resolvedParams = await params
   const supabase = await createClient();
   const { data: post } = await supabase
     .from("blogs")
     .select("title, excerpt, image, publish_date, author, slug, tags")
-    .eq("slug", params.slug)
+    .eq("slug", resolvedParams.slug)
     .maybeSingle();
 
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pcachurchsydney.com";
-  const url = `${base}/blog/${params.slug}`;
+  const url = `${base}/blog/${resolvedParams.slug}`;
 
   if (!post) {
     return {
