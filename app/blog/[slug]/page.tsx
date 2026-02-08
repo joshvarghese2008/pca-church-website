@@ -8,13 +8,13 @@ import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
 import { MotionImage } from "../../components/MotionImage";
 import CopyLink from "../../components/CopyLink";
 import Image from "next/image";
-import React from "react";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const resolvedParams = await params;
   const supabase = await createClient();
   const { data: post } = await supabase
@@ -36,22 +36,11 @@ export async function generateMetadata({
 
   return {
     title: post.title,
-    description: post.excerpt ?? undefined,
+    description: post.excerpt,
     openGraph: {
-      title: post.title,
-      description: post.excerpt ?? undefined,
-      url: url,
-      images: post.image
-        ? [{ url: post.image, secureUrl: post.image, width: 1920, height: 720 }]
-        : undefined,
+      images: [{url: post.image}],
       type: "article",
       publishedTime: post.publish_date,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt ?? undefined,
-      images: post.image ? [post.image] : undefined,
     },
     alternates: { canonical: url },
   };
