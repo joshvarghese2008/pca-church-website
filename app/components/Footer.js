@@ -42,7 +42,7 @@ export default function Footer() {
               <Link href={"https://www.facebook.com/pcasydney/"} className={styles.footericonlink}>
                 <FacebookRounded sx={{ color: "var(--secondaryBrand1)" }} />
               </Link>
-              <Link href={"https://www.youtube.com/@pcachurchsydney"} className={styles.footericonlink}>
+              <Link href={"https://www.youtube.com/@pcasydney"} className={styles.footericonlink}>
                 <YouTube sx={{ color: "var(--secondaryBrand1)" }} />
               </Link>
               <Link href={"https://www.instagram.com/pcachurchsydney"} className={styles.footericonlink}>

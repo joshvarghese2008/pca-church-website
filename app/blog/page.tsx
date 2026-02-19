@@ -6,6 +6,7 @@ import { getAllPosts } from "@/lib/posts";
 
 import { createClient } from "@/lib/supabase/server";
 import { Suspense } from "react";
+import { Metadata } from "next";
 
 // async function BlogPosts() {
 //     const supabase = await createClient();
@@ -17,6 +18,28 @@ import { Suspense } from "react";
 
 //     console.log("Posts:", posts);
 // }
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "We as a church have written some articles that express our ideas about certains topics",
+  keywords: ["blog", "messages", "teachings"],
+  openGraph: {
+    title: "Blog",
+    description:
+      "We as a church have written some articles that express our ideas about certains topics",
+    url: "https://www.churchwebsite.com/blog",
+    images: [
+      {
+        url: "https://www.pcachurchsydney.com/images/churchlogo.png",
+        width: 800,
+        height: 600,
+        alt: "Church Logo",
+      },
+    ],
+    siteName: "Church Website",
+  },
+};
 
 export default async function BlogPage() {
   const supabase = await createClient();
