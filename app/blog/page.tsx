@@ -50,8 +50,8 @@ export default async function BlogPage() {
     .limit(4);
 
   // const posts = getAllPosts();
-  const latest = posts[0];
-  const more = posts.slice(1, 4);
+  const latest = posts![0];
+  const more = posts!.slice(1, 4);
 
   const transition = {
     duration: 0.5,
