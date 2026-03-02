@@ -9,6 +9,9 @@ const transition = {
 };
 
 export default function GiveContent() {
+  const telHref = "tel:+61423358312";
+  const emailHref = "mailto:pastor@pcachurchsydney.com";
+
   return (
     <>
       <div className={styles.hero}>
@@ -69,22 +72,26 @@ export default function GiveContent() {
                 for offerings to be collected.
               </p>
             </motion.div>
-            {/* <div className={styles.giveMethodDivider} />
-            <div className={styles.giveMethodSection}>
+            <div className={styles.giveMethodDivider} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: transition.delay + 1.4,
+                duration: transition.duration,
+              }}
+              className={styles.giveMethodSection}
+            >
               <p className={styles.giveMethodTitle}>Bank Transfer</p>
-              <p className={styles.giveMethodText} style={{ marginBottom: "1rem" }}>
-                You can also donate through a bank transfer.<br />Please use the Bank Details below:
+              <p
+                className={styles.giveMethodText}
+                style={{ marginBottom: "1rem" }}
+              >
+                If you would like to donate through an online transfer, please
+                contact the church.
               </p>
-              <p className={styles.giveMethodText}>
-                <b>Bank Name:</b> To be updated...
-              </p>
-              <p className={styles.giveMethodText}>
-                <b>Account Number:</b> To be updated...
-              </p>
-              <p className={styles.giveMethodText}>
-                <b>BSB:</b> To be updated...
-              </p>
-            </div> */}
+            </motion.div>
           </div>
         </div>
       </div>
