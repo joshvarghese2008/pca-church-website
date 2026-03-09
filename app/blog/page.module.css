@@ -81,6 +81,31 @@
   margin: 0 0 20px 0;
 }
 
+/* introduction section below hero */
+.introSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+  align-items: center;
+  text-align: center;
+}
+
+.introText {
+  margin: 0;
+  color: var(--primaryDark2);
+  font-size: 1.2em;
+  line-height: 1.6;
+  max-width: 100%; /* allow full width of content container */
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .introText {
+    font-size: 16px;
+  }
+}
+
 .latestCard {
   display: flex;
   gap: 28px;

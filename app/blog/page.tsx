@@ -83,6 +83,20 @@ export default async function BlogPage() {
       </div>
 
       <div className={styles.content}>
+        {/* introduction explaining main objective of the blog page */}
+        <section className={styles.introSection}>
+          <p className={styles.introText}>
+            This blog is our way of providing a dedicated space for our church
+            community to share our insights, teachings, and experiences of our
+            walk as followers of Christ. Our goal is to link our Sunday service
+            with our weekday life by providing biblical wisdom and reflections
+            that can help you in following Jesus throughout life's journey. <br/><br/>Our
+            desire, whether you want in-depth study of Scripture or a brief
+            message of encouragement, is simple: <b>To ready your heart and point
+            you to the Gospel!</b>
+          </p>
+        </section>
+
         <section className={styles.latestSection}>
           <h2 className={styles.sectionHeading}>Latest Post</h2>
 
