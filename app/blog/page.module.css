@@ -100,12 +100,6 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-  .introText {
-    font-size: 16px;
-  }
-}
-
 .latestCard {
   display: flex;
   gap: 28px;
