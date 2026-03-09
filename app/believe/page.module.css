@@ -90,12 +90,12 @@
 }
 
 .believecontent {
-  display: flex;
   color: var(--primaryDark1);
 }
 
 .believetitle {
-  display: inline;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .believeverses {

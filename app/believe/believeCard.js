@@ -32,11 +32,8 @@ export default function BelieveCard({ key, id, title, description, verses }) {
     >
       <div className={styles.whatwebelievecontent}>
         <div className={styles.believecontent}>
+          <h1 className={styles.believetitle}>{statements.title}</h1>
           <p>
-            <b>
-              {statements.title}
-              {"..."}
-            </b>{" "}
             {statements.description}
           </p>
         </div>
