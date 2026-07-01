@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 
 export default async function LatestPost() {
-  const supabase = await createClient();
+  const supabase = createClient();
   const { data: posts } = await supabase
     .from("blogs")
     .select("*")
