@@ -99,6 +99,19 @@ export default function VisitForm() {
       >
         Visit Form
       </h1>
+      <p
+        style={{
+          fontSize: "1.2rem",
+          marginTop: "20px",
+          marginBottom: "20px",
+          color: "var(--primaryDark2)"
+        }}
+      >
+        Feel free to fill out the form below, so that we can get in touch with you and help you plan your visit.
+        <br/>
+        <br/>
+        If you would like to get in touch with us directly, feel free to use the Email address or Phone number that is at the bottom of the page.
+      </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -127,47 +140,6 @@ export default function VisitForm() {
               </FormItem>
             )}
           />
-          {/* <FormField
-            control={form.control}
-            name="visitDate"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>Visit Date</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-full pl-3 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date to Visit</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={{
-                        dayOfWeek: [1, 2, 3, 4, 5, 6],
-                      }}
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
-                <FormMessage />
-              </FormItem>
-            )}
-          /> */}
           <Button style={{ borderRadius: "999px", backgroundColor: "var(--secondaryBrand1)"}} className="w-full" type="submit">
             Submit
           </Button>
@@ -176,7 +148,6 @@ export default function VisitForm() {
           </FormDescription>
         </form>
       </Form>
-      {/* <button onClick={() => toast({title: "Toasted"})}>Log</button> */}
     </div>
   );
 }
