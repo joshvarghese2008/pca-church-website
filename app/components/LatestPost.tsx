@@ -13,7 +13,7 @@ export default async function LatestPost() {
     .limit(4);
 
   // const posts = getAllPosts();
-  const latest = posts[0];
+  const latest = posts![0];
 
   return (
     <>
