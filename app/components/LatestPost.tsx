@@ -29,6 +29,7 @@ export default async function LatestPost() {
                     src={latest.image}
                     alt={latest.title}
                     fill={true}
+                    unoptimized={true}
                     className={styles.latestImageFill}
                   />
                 )}
