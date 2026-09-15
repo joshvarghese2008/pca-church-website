@@ -4,65 +4,145 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 
+function getYoutubeThumbnail(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const videoId =
+      parsedUrl.searchParams.get("v") ||
+      parsedUrl.pathname.split("/").filter(Boolean).pop();
+
+    if (!videoId || !["youtube.com", "www.youtube.com", "youtu.be"].includes(parsedUrl.hostname)) {
+      return null;
+    }
+
+    return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+  } catch {
+    return null;
+  }
+}
+
+function formatSermonDate(value: string) {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "Australia/Sydney",
+  }).format(date);
+}
+
 export default async function LatestPost() {
   const supabase = createClient();
-  const { data: posts } = await supabase
-    .from("blogs")
-    .select("*")
-    .order("id", { ascending: false })
-    .limit(4);
+  const [{ data: posts }, { data: sermons }] = await Promise.all([
+    supabase
+      .from("blogs")
+      .select("*")
+      .order("id", { ascending: false })
+      .limit(1),
+    supabase
+      .from("youtube_sermons")
+      .select("*")
+      .order("id", { ascending: false })
+      .limit(1),
+  ]);
 
-  // const posts = getAllPosts();
-  const latest = posts![0];
+  const latestPost = posts?.[0];
+  const latestSermon = sermons?.[0];
+  const sermonUrl =
+    latestSermon?.youtube_link || "https://www.youtube.com/@pcasydney";
+  const sermonThumbnail = latestSermon?.youtube_link
+    ? getYoutubeThumbnail(latestSermon.youtube_link)
+    : null;
 
   return (
-    <>
-      <div className={styles.latestBlogContainer}>
-        <section className={styles.latestBlogCenter}>
-          <h2 className={styles.sectionHeading}>Latest Blog Post</h2>
+    <div className={styles.latestBlogContainer}>
+      <section className={styles.latestBlogCenter}>
+        <h2 className={styles.sectionHeading}>Our Latest Content</h2>
 
-          {latest ? (
-            <div className={styles.latestCard}>
+        <div className={styles.latestContentGrid}>
+          <article className={styles.latestCard}>
+            <div className={styles.latestCardImage}>
+              {sermonThumbnail ? (
+                <MotionImage
+                  src={sermonThumbnail}
+                  alt={latestSermon.title || "Latest sermon"}
+                  fill={true}
+                  unoptimized={true}
+                  className={`${styles.latestImageFill} ${styles.latestSermonImage}`}
+                />
+              ) : (
+                <div className={styles.latestMediaPlaceholder}>Sermon</div>
+              )}
+            </div>
+            <div className={styles.latestCardContent}>
+              <p className={styles.latestType}>Sermon</p>
+              {latestSermon ? (
+                <p className={styles.latestMeta}>
+                  {latestSermon.author} · {formatSermonDate(latestSermon.created_at)}
+                </p>
+              ) : (
+                <p className={styles.latestMeta}>PCA Church YouTube channel</p>
+              )}
+              <h3 className={styles.latestTitle}>
+                {latestSermon?.title || "Watch our latest sermons"}
+              </h3>
+
+              <div className={styles.ctaContainer}>
+                <Link href={sermonUrl} target="_blank" rel="noreferrer">
+                  <Button asChild>
+                    <span>{latestSermon ? "Watch sermon" : "Watch sermons"}</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {latestPost ? (
+            <article className={styles.latestCard}>
               <div className={styles.latestCardImage}>
-                {latest.image && (
+                {latestPost.image && (
                   <MotionImage
-                    src={latest.image}
-                    alt={latest.title}
+                    src={latestPost.image}
+                    alt={latestPost.title}
                     fill={true}
                     unoptimized={true}
-                    className={styles.latestImageFill}
+                    className={`${styles.latestImageFill} ${styles.latestBlogImage}`}
                   />
                 )}
               </div>
               <div className={styles.latestCardContent}>
-                <p className={styles.latestMeta}>{latest.date}</p>
-                <h3 className={styles.latestTitle}>{latest.title}</h3>
-                <p className={styles.latestExcerpt}>{latest.excerpt}</p>
+                <p className={styles.latestType}>Blog post</p>
+                <p className={styles.latestMeta}>{latestPost.date}</p>
+                <h3 className={styles.latestTitle}>{latestPost.title}</h3>
+                <p className={styles.latestExcerpt}>{latestPost.excerpt}</p>
 
                 <div className={styles.ctaContainer}>
-                  <Link href={`/blog/${latest.slug}`}>
+                  <Link href={`/blog/${latestPost.slug}`}>
                     <Button asChild>
-                      <p>Read more</p>
+                      <span>Read more</span>
                     </Button>
                   </Link>
-
                   <Link href="/blog/all">
                     <Button
                       asChild
                       variant="outline"
                       className={styles.viewAllButton}
                     >
-                      <p>View all posts</p>
+                      <span>View all posts</span>
                     </Button>
                   </Link>
                 </div>
               </div>
-            </div>
-          ) : (
-            <p>No posts yet.</p>
-          )}
-        </section>
-      </div>
-    </>
+            </article>
+          ) : null}
+        </div>
+
+      </section>
+    </div>
   );
 }

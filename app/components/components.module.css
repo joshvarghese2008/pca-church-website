@@ -219,10 +219,15 @@
   margin: 0 0 44px 0;
 }
 
+.latestContentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
 .latestCard {
   display: flex;
-  gap: 28px;
-  align-items: stretch;
+  flex-direction: column;
   background: var(--card);
   color: var(--card-foreground);
   border-radius: 12px;
@@ -232,27 +237,51 @@
 
 .latestCardImage {
   position: relative;
-  min-width: 42%;
-  min-height: 180px;
-  background: var(--primaryBrand1transp);
+  aspect-ratio: 16 / 9;
+  background: var(--card);
 }
 
 .latestImageFill {
-  object-fit: cover;
   filter: none;
+}
+
+.latestSermonImage {
+  object-fit: cover;
+}
+
+.latestBlogImage {
+  object-fit: cover;
+}
+
+.latestMediaPlaceholder {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: var(--primaryBrand1);
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .latestCardContent {
   padding: 22px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
   gap: 12px;
 }
 
-.latestMeta {
+.latestType {
   color: var(--secondaryBrand1);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.latestMeta {
   font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
@@ -278,6 +307,16 @@
   display: inline-block;
 }
 
+@media only screen and (max-width: 700px) {
+  .latestContentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading {
+    font-size: 40px;
+  }
+}
+
 /* Responsive */
 @media only screen and (max-width: 780px) {
   .latestCard {
@@ -286,6 +325,5 @@
 
   .latestCardImage {
     min-width: 100%;
-    min-height: 190px;
   }
 }
