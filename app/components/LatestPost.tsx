@@ -2,7 +2,7 @@ import styles from "./components.module.css";
 import { MotionImage } from "./MotionImage";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/server";
 
 function getYoutubeThumbnail(url: string) {
   try {
@@ -37,8 +37,8 @@ function formatSermonDate(value: string) {
 }
 
 export default async function LatestPost() {
-  const supabase = createClient();
-  const [{ data: posts }, { data: sermons }] = await Promise.all([
+  const supabase = await createClient();
+  const [{ data: posts, error: postsError }, { data: sermons, error: sermonsError }] = await Promise.all([
     supabase
       .from("blogs")
       .select("*")
@@ -51,8 +51,16 @@ export default async function LatestPost() {
       .limit(1),
   ]);
 
-  const latestPost = posts?.[0];
-  const latestSermon = sermons?.[0];
+  if (postsError) {
+    console.error("Failed to fetch latest blog post", postsError);
+  }
+
+  if (sermonsError) {
+    console.error("Failed to fetch latest sermon", sermonsError);
+  }
+
+  const latestPost = posts?.[0] ?? null;
+  const latestSermon = sermons?.[0] ?? null;
   const sermonUrl =
     latestSermon?.youtube_link || "https://www.youtube.com/@pcasydney";
   const sermonThumbnail = latestSermon?.youtube_link
