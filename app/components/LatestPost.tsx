@@ -21,6 +21,40 @@ function getYoutubeThumbnail(url: string) {
   }
 }
 
+async function isYoutubeVideoPublic(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.toLowerCase();
+    const supportedHostnames = [
+      "youtube.com",
+      "www.youtube.com",
+      "m.youtube.com",
+      "youtu.be",
+      "www.youtu.be",
+      "youtube-nocookie.com",
+      "www.youtube-nocookie.com",
+    ];
+
+    if (!supportedHostnames.includes(hostname)) {
+      return false;
+    }
+
+    const response = await fetch(
+      `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(url)}`,
+      { next: { revalidate: 3600 } }
+    );
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const data = await response.json();
+    return Boolean(data?.title && data?.author_name);
+  } catch {
+    return false;
+  }
+}
+
 function formatSermonDate(value: string) {
   const date = new Date(value);
 
@@ -48,7 +82,7 @@ export default async function LatestPost() {
       .from("youtube_sermons")
       .select("*")
       .order("id", { ascending: false })
-      .limit(1),
+      .limit(10),
   ]);
 
   if (postsError) {
@@ -60,11 +94,23 @@ export default async function LatestPost() {
   }
 
   const latestPost = posts?.[0] ?? null;
-  const latestSermon = sermons?.[0] ?? null;
+  let latestPublicSermon = null;
+
+  for (const sermon of sermons ?? []) {
+    if (!sermon.youtube_link) {
+      continue;
+    }
+
+    if (await isYoutubeVideoPublic(sermon.youtube_link)) {
+      latestPublicSermon = sermon;
+      break;
+    }
+  }
+
   const sermonUrl =
-    latestSermon?.youtube_link || "https://www.youtube.com/@pcasydney";
-  const sermonThumbnail = latestSermon?.youtube_link
-    ? getYoutubeThumbnail(latestSermon.youtube_link)
+    latestPublicSermon?.youtube_link || "https://www.youtube.com/@pcasydney";
+  const sermonThumbnail = latestPublicSermon?.youtube_link
+    ? getYoutubeThumbnail(latestPublicSermon.youtube_link)
     : null;
 
   return (
@@ -78,7 +124,7 @@ export default async function LatestPost() {
               {sermonThumbnail ? (
                 <MotionImage
                   src={sermonThumbnail}
-                  alt={latestSermon.title || "Latest sermon"}
+                  alt={latestPublicSermon?.title || "Latest sermon"}
                   fill={true}
                   unoptimized={true}
                   className={`${styles.latestImageFill} ${styles.latestSermonImage}`}
@@ -89,21 +135,21 @@ export default async function LatestPost() {
             </div>
             <div className={styles.latestCardContent}>
               <p className={styles.latestType}>Sermon</p>
-              {latestSermon ? (
+              {latestPublicSermon ? (
                 <p className={styles.latestMeta}>
-                  {latestSermon.author} · {formatSermonDate(latestSermon.created_at)}
+                  {latestPublicSermon.author} · {formatSermonDate(latestPublicSermon.created_at)}
                 </p>
               ) : (
                 <p className={styles.latestMeta}>PCA Church YouTube channel</p>
               )}
               <h3 className={styles.latestTitle}>
-                {latestSermon?.title || "Watch our latest sermons"}
+                {latestPublicSermon?.title || "Watch our latest sermons"}
               </h3>
 
               <div className={styles.ctaContainer}>
                 <Link href={sermonUrl} target="_blank" rel="noreferrer">
                   <Button asChild>
-                    <span>{latestSermon ? "Watch sermon" : "Watch sermons"}</span>
+                    <span>{latestPublicSermon ? "Watch sermon" : "Watch sermons"}</span>
                   </Button>
                 </Link>
               </div>
